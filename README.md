@@ -8,7 +8,6 @@
 
 ### 视频教程
 > 自媒体账号名： 程序员阿江-Relakkes
-- Github：https://github.com/NanmiCoder
 - B站：https://space.bilibili.com/434377496
 - 小红书：https://www.xiaohongshu.com/user/profile/5f58bd990000000001003753
 - 抖音：https://www.douyin.com/user/MS4wLjABAAAATJPY7LAlaa5X-c8uNdWkvz0jUGgpw4eeXIwu_8BhvqE
@@ -52,3 +51,7 @@ todo
 
 ## 免责声明
 >本仓库的所有内容仅供学习和参考之用，禁止用于商业用途。任何人或组织不得将本仓库的内容用于非法用途或侵犯他人合法权益。本仓库所涉及的爬虫技术仅用于学习和研究，不得用于对其他平台进行大规模爬虫或其他非法行为。对于因使用本仓库内容而引起的任何法律责任，本仓库不承担任何责任。使用本仓库的内容即表示您同意本免责声明的所有条款和条件。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=NanmiCoder/CrawlerTutorial&type=Date)](https://star-history.com/#NanmiCoder/CrawlerTutorial&Date)

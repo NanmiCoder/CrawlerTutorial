@@ -5,20 +5,7 @@
 from bs4 import BeautifulSoup
 from parsel import Selector
 
-class NoteContent:
-    title: str = ""
-    author: str = ""
-    publish_date: str = ""
-    detail_link: str = ""
-
-    def __str__(self):
-        return f"""
-Title: {self.title}
-User: {self.author}
-Publish Date: {self.publish_date}
-Detail Link: {self.detail_link}        
-"""
-
+from common import NoteContent
 
 
 def parse_html_use_bs(html_content: str):

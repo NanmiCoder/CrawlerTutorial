@@ -23,6 +23,10 @@
 <a href="https://sider.ai/ad-land-redirect?source=github&p1=mi&p2=kk">通过注册这个款免费的GPT助手，帮我获取GPT4额度作为支持。也是我每天在用的一款chrome AI助手插件</a>
 <a href="https://sider.ai/ad-land-redirect?source=github&p1=mi&p2=kk" target="_blank"><img src="https://s2.loli.net/2024/04/01/jK8drZ2bxTg67q9.png" ></a>
 
+## 爬虫教程交流群：
+> 7天有效期，自动更新
+
+![img.png](static/images/qrcode/1.png)
 
 ## 爬虫入门
 ### 爬虫入门教程目录大纲

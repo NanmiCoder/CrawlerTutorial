@@ -1,0 +1,4165 @@
+{
+  "finance": {
+    "result": [
+      {
+        "start": 0,
+        "count": 25,
+        "total": 9591,
+        "quotes": [
+          {
+            "symbol": "BTC-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.556658,
+              "fmt": "55.67%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.7979708,
+              "fmt": "179.80%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 19675876,
+              "fmt": "19.676M",
+              "longFmt": "19,675,876"
+            },
+            "regularMarketDayRange": {
+              "raw": "68853.89 - 69677.29",
+              "fmt": "68,853.89 - 69,677.29"
+            },
+            "regularMarketDayHigh": {
+              "raw": 69677.29,
+              "fmt": "69,677.29"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 24810.785,
+              "fmt": "24,810.79"
+            },
+            "fromCurrency": "BTC",
+            "twoHundredDayAverage": {
+              "raw": 44570.965,
+              "fmt": "44,570.96"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -4368.3203,
+              "fmt": "-4,368.32"
+            },
+            "marketCap": {
+              "raw": 1365146599424,
+              "fmt": "1.365T",
+              "longFmt": "1,365,146,599,424"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "24797.168 - 73750.07",
+              "fmt": "24,797.17 - 73,750.07"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 5271.9688,
+              "fmt": "5,271.97"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1410912000000,
+            "averageDailyVolume3Month": {
+              "raw": 34544102274,
+              "fmt": "34.544B",
+              "longFmt": "34,544,102,274"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 143.16518,
+              "fmt": "143.17%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 24797.168,
+              "fmt": "24,797.17"
+            },
+            "regularMarketVolume": {
+              "raw": 19775911936,
+              "fmt": "19.776B",
+              "longFmt": "19,775,911,936"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_BTC_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 68853.89,
+              "fmt": "68,853.89"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Bitcoin USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.08223345,
+              "fmt": "8.22%"
+            },
+            "startDate": {
+              "raw": 1278979200,
+              "fmt": "2010-07-13",
+              "longFmt": "2010-07-13T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 68905.92,
+              "fmt": "68,905.92"
+            },
+            "regularMarketTime": {
+              "raw": 1712497920,
+              "fmt": "1:52PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.4705524,
+              "fmt": "2.47%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 44584.582,
+              "fmt": "44,584.58"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 30500926537,
+              "fmt": "30.501B",
+              "longFmt": "30,500,926,537"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.059231404,
+              "fmt": "-5.92%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 68905.92,
+              "fmt": "68,905.92"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 73750.07,
+              "fmt": "73,750.07"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 19775911936,
+              "fmt": "19.776B",
+              "longFmt": "19,775,911,936"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/bitcoin",
+            "regularMarketChange": {
+              "raw": 1672.7891,
+              "fmt": "1,672.79"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 19775911936,
+              "fmt": "19.776B",
+              "longFmt": "19,775,911,936"
+            },
+            "fiftyDayAverage": {
+              "raw": 64109.78,
+              "fmt": "64,109.78"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 69381.75,
+              "fmt": "69,381.75"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Bitcoin USD"
+          },
+          {
+            "symbol": "ETH-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.40548274,
+              "fmt": "40.55%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.2367784,
+              "fmt": "123.68%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 120069584,
+              "fmt": "120.07M",
+              "longFmt": "120,069,584"
+            },
+            "regularMarketDayRange": {
+              "raw": "3346.2534 - 3413.3728",
+              "fmt": "3,346.25 - 3,413.37"
+            },
+            "regularMarketDayHigh": {
+              "raw": 3413.3728,
+              "fmt": "3,413.37"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 982.9636,
+              "fmt": "982.96"
+            },
+            "fromCurrency": "ETH",
+            "twoHundredDayAverage": {
+              "raw": 2424.1812,
+              "fmt": "2,424.18"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -685.1394,
+              "fmt": "-685.14"
+            },
+            "marketCap": {
+              "raw": 409094455296,
+              "fmt": "409.094B",
+              "longFmt": "409,094,455,296"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "1523.2375 - 4092.2842",
+              "fmt": "1,523.24 - 4,092.28"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -38.968506,
+              "fmt": "-38.97"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 16557083295,
+              "fmt": "16.557B",
+              "longFmt": "16,557,083,295"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 80.391846,
+              "fmt": "80.39%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 1523.2375,
+              "fmt": "1,523.24"
+            },
+            "regularMarketVolume": {
+              "raw": 9149124608,
+              "fmt": "9.149B",
+              "longFmt": "9,149,124,608"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_ETH_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 3346.2534,
+              "fmt": "3,346.25"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Ethereum USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.0113079585,
+              "fmt": "-1.13%"
+            },
+            "startDate": {
+              "raw": 1438905600,
+              "fmt": "2015-08-07",
+              "longFmt": "2015-08-07T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 3353.7634,
+              "fmt": "3,353.76"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.6061654,
+              "fmt": "2.61%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 1883.9072,
+              "fmt": "1,883.91"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 14175840080,
+              "fmt": "14.176B",
+              "longFmt": "14,175,840,080"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.16742225,
+              "fmt": "-16.74%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 3353.7634,
+              "fmt": "3,353.76"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 4092.2842,
+              "fmt": "4,092.28"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 9149124608,
+              "fmt": "9.149B",
+              "longFmt": "9,149,124,608"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/ethereum",
+            "regularMarketChange": {
+              "raw": 86.54053,
+              "fmt": "86.54"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 9149124608,
+              "fmt": "9.149B",
+              "longFmt": "9,149,124,608"
+            },
+            "fiftyDayAverage": {
+              "raw": 3446.1133,
+              "fmt": "3,446.11"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 3407.1448,
+              "fmt": "3,407.14"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Ethereum USD"
+          },
+          {
+            "symbol": "USDT-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 3.9926625E-5,
+              "fmt": "0.00%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.0045106285,
+              "fmt": "0.45%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 106900267008,
+              "fmt": "106.9B",
+              "longFmt": "106,900,267,008"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.9999326 - 1.0004737",
+              "fmt": "1.00 - 1.00"
+            },
+            "regularMarketDayHigh": {
+              "raw": 1.0004737,
+              "fmt": "1.0005"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 3.9935112E-5,
+              "fmt": "0.00"
+            },
+            "fromCurrency": "USDT",
+            "twoHundredDayAverage": {
+              "raw": 1.0002126,
+              "fmt": "1.00"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.0033775568,
+              "fmt": "-0.00"
+            },
+            "marketCap": {
+              "raw": 106927259648,
+              "fmt": "106.927B",
+              "longFmt": "106,927,259,648"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.995761 - 1.00363",
+              "fmt": "1.00 - 1.00"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -7.271767E-5,
+              "fmt": "-0.00"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 65326007063,
+              "fmt": "65.326B",
+              "longFmt": "65,326,007,063"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": -0.023388863,
+              "fmt": "-0.02%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.995761,
+              "fmt": "0.9958"
+            },
+            "regularMarketVolume": {
+              "raw": 41758822400,
+              "fmt": "41.759B",
+              "longFmt": "41,758,822,400"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_USDT_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 4,
+            "regularMarketDayLow": {
+              "raw": 0.9999326,
+              "fmt": "0.9999"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Tether USDt USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -7.269403E-5,
+              "fmt": "-0.01%"
+            },
+            "startDate": {
+              "raw": 1424822400,
+              "fmt": "2015-02-25",
+              "longFmt": "2015-02-25T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 1.0002738,
+              "fmt": "1.0003"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": -0.01244463,
+              "fmt": "-0.01%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.004491508,
+              "fmt": "0.00"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 64508216040,
+              "fmt": "64.508B",
+              "longFmt": "64,508,216,040"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.0033653404,
+              "fmt": "-0.34%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 1.0002738,
+              "fmt": "1.0003"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 1.00363,
+              "fmt": "1.0036"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 41758822400,
+              "fmt": "41.759B",
+              "longFmt": "41,758,822,400"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/tether",
+            "regularMarketChange": {
+              "raw": -1.244545E-4,
+              "fmt": "-0.0001"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 41758822400,
+              "fmt": "41.759B",
+              "longFmt": "41,758,822,400"
+            },
+            "fiftyDayAverage": {
+              "raw": 1.0003252,
+              "fmt": "1.00"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 1.0002525,
+              "fmt": "1.0003"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Tether USDt USD"
+          },
+          {
+            "symbol": "BNB-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.8450277,
+              "fmt": "84.50%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.8900155,
+              "fmt": "189.00%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 149535072,
+              "fmt": "149.535M",
+              "longFmt": "149,535,072"
+            },
+            "regularMarketDayRange": {
+              "raw": "585.6446 - 590.5511",
+              "fmt": "585.64 - 590.55"
+            },
+            "regularMarketDayHigh": {
+              "raw": 590.5511,
+              "fmt": "590.55"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 269.56546,
+              "fmt": "269.57"
+            },
+            "fromCurrency": "BNB",
+            "twoHundredDayAverage": {
+              "raw": 319.00192,
+              "fmt": "319.00"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -52.913757,
+              "fmt": "-52.91"
+            },
+            "marketCap": {
+              "raw": 88011464704,
+              "fmt": "88.011B",
+              "longFmt": "88,011,464,704"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "203.65544 - 641.48114",
+              "fmt": "203.66 - 641.48"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 90.78204,
+              "fmt": "90.78"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 1864763533,
+              "fmt": "1.865B",
+              "longFmt": "1,864,763,533"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 87.28627,
+              "fmt": "87.29%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 203.65544,
+              "fmt": "203.66"
+            },
+            "regularMarketVolume": {
+              "raw": 1325465088,
+              "fmt": "1.325B",
+              "longFmt": "1,325,465,088"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_BNB_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 585.6446,
+              "fmt": "585.64"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "BNB USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.18237187,
+              "fmt": "18.24%"
+            },
+            "startDate": {
+              "raw": 1500940800,
+              "fmt": "2017-07-25",
+              "longFmt": "2017-07-25T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 585.9942,
+              "fmt": "585.99"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 1.2074119,
+              "fmt": "1.21%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 384.91193,
+              "fmt": "384.91"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 2023313782,
+              "fmt": "2.023B",
+              "longFmt": "2,023,313,782"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.082486846,
+              "fmt": "-8.25%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 585.9942,
+              "fmt": "585.99"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 641.48114,
+              "fmt": "641.48"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 1325465088,
+              "fmt": "1.325B",
+              "longFmt": "1,325,465,088"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/bnb",
+            "regularMarketChange": {
+              "raw": 7.0216675,
+              "fmt": "7.02"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 1325465088,
+              "fmt": "1.325B",
+              "longFmt": "1,325,465,088"
+            },
+            "fiftyDayAverage": {
+              "raw": 497.78534,
+              "fmt": "497.79"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 588.5674,
+              "fmt": "588.57"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "BNB USD"
+          },
+          {
+            "symbol": "SOL-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 1.0730132,
+              "fmt": "107.30%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 12.575076,
+              "fmt": "1,257.51%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 445582656,
+              "fmt": "445.583M",
+              "longFmt": "445,582,656"
+            },
+            "regularMarketDayRange": {
+              "raw": "177.71307 - 182.53813",
+              "fmt": "177.71 - 182.54"
+            },
+            "regularMarketDayHigh": {
+              "raw": 182.53813,
+              "fmt": "182.54"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 94.01205,
+              "fmt": "94.01"
+            },
+            "fromCurrency": "SOL",
+            "twoHundredDayAverage": {
+              "raw": 87.615,
+              "fmt": "87.61"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -28.069016,
+              "fmt": "-28.07"
+            },
+            "marketCap": {
+              "raw": 80929857536,
+              "fmt": "80.93B",
+              "longFmt": "80,929,857,536"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "13.379449 - 209.69606",
+              "fmt": "13.38 - 209.70"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 27.7845,
+              "fmt": "27.78"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1586476800000,
+            "averageDailyVolume3Month": {
+              "raw": 3755823710,
+              "fmt": "3.756B",
+              "longFmt": "3,755,823,710"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 781.3796,
+              "fmt": "781.38%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 13.379449,
+              "fmt": "13.38"
+            },
+            "regularMarketVolume": {
+              "raw": 1999086464,
+              "fmt": "1.999B",
+              "longFmt": "1,999,086,464"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_SOL_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 177.71307,
+              "fmt": "177.71"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Solana USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.18060349,
+              "fmt": "18.06%"
+            },
+            "startDate": {
+              "raw": 1586476800,
+              "fmt": "2020-04-10",
+              "longFmt": "2020-04-10T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 178.8922,
+              "fmt": "178.89"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 4.345732,
+              "fmt": "4.35%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 168.24759,
+              "fmt": "168.25"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 4004161998,
+              "fmt": "4.004B",
+              "longFmt": "4,004,161,998"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.13385572,
+              "fmt": "-13.39%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 178.8922,
+              "fmt": "178.89"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 209.69606,
+              "fmt": "209.70"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 1999086464,
+              "fmt": "1.999B",
+              "longFmt": "1,999,086,464"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/solana",
+            "regularMarketChange": {
+              "raw": 7.5642853,
+              "fmt": "7.56"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 1999086464,
+              "fmt": "1.999B",
+              "longFmt": "1,999,086,464"
+            },
+            "fiftyDayAverage": {
+              "raw": 153.84254,
+              "fmt": "153.84"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 181.62704,
+              "fmt": "181.63"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Solana USD"
+          },
+          {
+            "symbol": "XRP-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.030738136,
+              "fmt": "3.07%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.45164612,
+              "fmt": "45.16%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 55051550720,
+              "fmt": "55.052B",
+              "longFmt": "55,051,550,720"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.5932909 - 0.6010551",
+              "fmt": "0.59 - 0.60"
+            },
+            "regularMarketDayHigh": {
+              "raw": 0.6010551,
+              "fmt": "0.601055"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 0.017877221,
+              "fmt": "0.02"
+            },
+            "fromCurrency": "XRP",
+            "twoHundredDayAverage": {
+              "raw": 0.58159745,
+              "fmt": "0.58"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.28803635,
+              "fmt": "-0.29"
+            },
+            "marketCap": {
+              "raw": 33002008576,
+              "fmt": "33.002B",
+              "longFmt": "33,002,008,576"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.412962 - 0.887511",
+              "fmt": "0.41 - 0.89"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.0077521205,
+              "fmt": "-0.01"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 1684802859,
+              "fmt": "1.685B",
+              "longFmt": "1,684,802,859"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 17.299355,
+              "fmt": "17.30%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.412962,
+              "fmt": "0.412962"
+            },
+            "regularMarketVolume": {
+              "raw": 873347904,
+              "fmt": "873.348M",
+              "longFmt": "873,347,904"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_XRP_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.5932909,
+              "fmt": "0.593291"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "XRP USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.012766434,
+              "fmt": "-1.28%"
+            },
+            "startDate": {
+              "raw": 1375574400,
+              "fmt": "2013-08-04",
+              "longFmt": "2013-08-04T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 0.59334457,
+              "fmt": "0.593345"
+            },
+            "regularMarketTime": {
+              "raw": 1712497920,
+              "fmt": "1:52PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.023394,
+              "fmt": "2.02%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.18651268,
+              "fmt": "0.19"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 1564777157,
+              "fmt": "1.565B",
+              "longFmt": "1,564,777,157"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.32454398,
+              "fmt": "-32.45%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 0.59334457,
+              "fmt": "0.593345"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 0.887511,
+              "fmt": "0.887511"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 873347904,
+              "fmt": "873.348M",
+              "longFmt": "873,347,904"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/xrp",
+            "regularMarketChange": {
+              "raw": 0.011889219,
+              "fmt": "0.011889"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 873347904,
+              "fmt": "873.348M",
+              "longFmt": "873,347,904"
+            },
+            "fiftyDayAverage": {
+              "raw": 0.6072268,
+              "fmt": "0.61"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.59947467,
+              "fmt": "0.599475"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "XRP USD"
+          },
+          {
+            "symbol": "USDC-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": -6.0018814E-5,
+              "fmt": "-0.01%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.0021817693,
+              "fmt": "0.22%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 32937725952,
+              "fmt": "32.938B",
+              "longFmt": "32,937,725,952"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.999568 - 1.0001274",
+              "fmt": "1.00 - 1.00"
+            },
+            "regularMarketDayHigh": {
+              "raw": 1.0001274,
+              "fmt": "1.000127"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": -6.0021877E-5,
+              "fmt": "-0.00"
+            },
+            "fromCurrency": "USDC",
+            "twoHundredDayAverage": {
+              "raw": 1.000051,
+              "fmt": "1.00"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.0029760003,
+              "fmt": "-0.00"
+            },
+            "marketCap": {
+              "raw": 32937428992,
+              "fmt": "32.937B",
+              "longFmt": "32,937,428,992"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.997814 - 1.002967",
+              "fmt": "1.00 - 1.00"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 9.417534E-6,
+              "fmt": "0.00"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1538956800000,
+            "averageDailyVolume3Month": {
+              "raw": 7552297739,
+              "fmt": "7.552B",
+              "longFmt": "7,552,297,739"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 0.031113625,
+              "fmt": "0.03%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.997814,
+              "fmt": "0.997814"
+            },
+            "regularMarketVolume": {
+              "raw": 4184847616,
+              "fmt": "4.185B",
+              "longFmt": "4,184,847,616"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_USDC_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.999568,
+              "fmt": "0.999568"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "USDC USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 9.417708E-6,
+              "fmt": "0.00%"
+            },
+            "startDate": {
+              "raw": 1538956800,
+              "fmt": "2018-10-08",
+              "longFmt": "2018-10-08T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 1.0000322,
+              "fmt": "1.000032"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": -0.00657326,
+              "fmt": "-0.01%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.002177,
+              "fmt": "0.00"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 9170685342,
+              "fmt": "9.171B",
+              "longFmt": "9,170,685,342"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.0029671967,
+              "fmt": "-0.30%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 1.0000322,
+              "fmt": "1.000032"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 1.002967,
+              "fmt": "1.002967"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 4184847616,
+              "fmt": "4.185B",
+              "longFmt": "4,184,847,616"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/usd-coin",
+            "regularMarketChange": {
+              "raw": -6.574392E-5,
+              "fmt": "-0.000066"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 4184847616,
+              "fmt": "4.185B",
+              "longFmt": "4,184,847,616"
+            },
+            "fiftyDayAverage": {
+              "raw": 0.9999816,
+              "fmt": "1.00"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.999991,
+              "fmt": "0.999991"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "USD Coin USD"
+          },
+          {
+            "symbol": "STETH-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.40581444,
+              "fmt": "40.58%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.2327818,
+              "fmt": "123.28%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 9530399,
+              "fmt": "9.53M",
+              "longFmt": "9,530,399"
+            },
+            "regularMarketDayRange": {
+              "raw": "3350.6853 - 3402.89",
+              "fmt": "3,350.69 - 3,402.89"
+            },
+            "regularMarketDayHigh": {
+              "raw": 3402.89,
+              "fmt": "3,402.89"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 982.3074,
+              "fmt": "982.31"
+            },
+            "fromCurrency": "STETH",
+            "twoHundredDayAverage": {
+              "raw": 2420.5825,
+              "fmt": "2,420.58"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -674.97754,
+              "fmt": "-674.98"
+            },
+            "marketCap": {
+              "raw": 32430901248,
+              "fmt": "32.431B",
+              "longFmt": "32,430,901,248"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "1524.0585 - 4077.8674",
+              "fmt": "1,524.06 - 4,077.87"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -38.95703,
+              "fmt": "-38.96"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1608681600000,
+            "averageDailyVolume3Month": {
+              "raw": 57371257,
+              "fmt": "57.371M",
+              "longFmt": "57,371,257"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 82.8684,
+              "fmt": "82.87%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/8085.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 1524.0585,
+              "fmt": "1,524.06"
+            },
+            "regularMarketVolume": {
+              "raw": 116702536,
+              "fmt": "116.703M",
+              "longFmt": "116,702,536"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_STETH_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 3350.6853,
+              "fmt": "3,350.69"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Lido Staked ETH USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.011318642,
+              "fmt": "-1.13%"
+            },
+            "startDate": {
+              "raw": 1608681600,
+              "fmt": "2020-12-23",
+              "longFmt": "2020-12-23T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/8085.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 3361.622,
+              "fmt": "3,361.62"
+            },
+            "regularMarketTime": {
+              "raw": 1712497680,
+              "fmt": "1:48PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.5137918,
+              "fmt": "2.51%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 1878.8314,
+              "fmt": "1,878.83"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 110028354,
+              "fmt": "110.028M",
+              "longFmt": "110,028,354"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.16552219,
+              "fmt": "-16.55%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 3361.622,
+              "fmt": "3,361.62"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 4077.8674,
+              "fmt": "4,077.87"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 116702536,
+              "fmt": "116.703M",
+              "longFmt": "116,702,536"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/steth",
+            "regularMarketChange": {
+              "raw": 83.44385,
+              "fmt": "83.44"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 116702536,
+              "fmt": "116.703M",
+              "longFmt": "116,702,536"
+            },
+            "fiftyDayAverage": {
+              "raw": 3441.847,
+              "fmt": "3,441.85"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 3402.89,
+              "fmt": "3,402.89"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Lido Staked ETH USD"
+          },
+          {
+            "symbol": "DOGE-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 1.0712817,
+              "fmt": "107.13%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 2.4511244,
+              "fmt": "245.11%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 143787933696,
+              "fmt": "143.788B",
+              "longFmt": "143,787,933,696"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.18585032 - 0.19837248",
+              "fmt": "0.19 - 0.20"
+            },
+            "regularMarketDayHigh": {
+              "raw": 0.19837248,
+              "fmt": "0.198372"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 0.102573715,
+              "fmt": "0.10"
+            },
+            "fromCurrency": "DOGE",
+            "twoHundredDayAverage": {
+              "raw": 0.095748596,
+              "fmt": "0.10"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.028258696,
+              "fmt": "-0.03"
+            },
+            "marketCap": {
+              "raw": 28516356096,
+              "fmt": "28.516B",
+              "longFmt": "28,516,356,096"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.057466 - 0.226581",
+              "fmt": "0.06 - 0.23"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 0.047750413,
+              "fmt": "0.05"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 1741065802,
+              "fmt": "1.741B",
+              "longFmt": "1,741,065,802"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 123.2573,
+              "fmt": "123.26%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.057466,
+              "fmt": "0.057466"
+            },
+            "regularMarketVolume": {
+              "raw": 2146535680,
+              "fmt": "2.147B",
+              "longFmt": "2,146,535,680"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_DOGE_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.18585032,
+              "fmt": "0.185850"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Dogecoin USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.317127,
+              "fmt": "31.71%"
+            },
+            "startDate": {
+              "raw": 1387065600,
+              "fmt": "2013-12-15",
+              "longFmt": "2013-12-15T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 0.18592921,
+              "fmt": "0.185929"
+            },
+            "regularMarketTime": {
+              "raw": 1712497920,
+              "fmt": "1:52PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 9.884917,
+              "fmt": "9.88%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.14085631,
+              "fmt": "0.14"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 3093055218,
+              "fmt": "3.093B",
+              "longFmt": "3,093,055,218"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.124717854,
+              "fmt": "-12.47%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 0.18592921,
+              "fmt": "0.185929"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 0.226581,
+              "fmt": "0.226581"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 2146535680,
+              "fmt": "2.147B",
+              "longFmt": "2,146,535,680"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/dogecoin",
+            "regularMarketChange": {
+              "raw": 0.017840475,
+              "fmt": "0.017840"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 2146535680,
+              "fmt": "2.147B",
+              "longFmt": "2,146,535,680"
+            },
+            "fiftyDayAverage": {
+              "raw": 0.1505719,
+              "fmt": "0.15"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.19832231,
+              "fmt": "0.198322"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Dogecoin USD"
+          },
+          {
+            "symbol": "ADA-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.2262859,
+              "fmt": "22.63%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.5815724,
+              "fmt": "158.16%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 35599572992,
+              "fmt": "35.6B",
+              "longFmt": "35,599,572,992"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.5828872 - 0.5948459",
+              "fmt": "0.58 - 0.59"
+            },
+            "regularMarketDayHigh": {
+              "raw": 0.5948459,
+              "fmt": "0.594846"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 0.1097666,
+              "fmt": "0.11"
+            },
+            "fromCurrency": "ADA",
+            "twoHundredDayAverage": {
+              "raw": 0.4850793,
+              "fmt": "0.49"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.21213913,
+              "fmt": "-0.21"
+            },
+            "marketCap": {
+              "raw": 21176258560,
+              "fmt": "21.176B",
+              "longFmt": "21,176,258,560"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.23042 - 0.806985",
+              "fmt": "0.23 - 0.81"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.06294888,
+              "fmt": "-0.06"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 649408667,
+              "fmt": "649.409M",
+              "longFmt": "649,408,667"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 49.948288,
+              "fmt": "49.95%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.23042,
+              "fmt": "0.230420"
+            },
+            "regularMarketVolume": {
+              "raw": 272433152,
+              "fmt": "272.433M",
+              "longFmt": "272,433,152"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_ADA_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.5828872,
+              "fmt": "0.582887"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Cardano USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.095696844,
+              "fmt": "-9.57%"
+            },
+            "startDate": {
+              "raw": 1506816000,
+              "fmt": "2017-10-01",
+              "longFmt": "2017-10-01T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 0.5843018,
+              "fmt": "0.584302"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.890592,
+              "fmt": "2.89%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.3644259,
+              "fmt": "0.36"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 473725885,
+              "fmt": "473.726M",
+              "longFmt": "473,725,885"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.26287866,
+              "fmt": "-26.29%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 0.5843018,
+              "fmt": "0.584302"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 0.806985,
+              "fmt": "0.806985"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 272433152,
+              "fmt": "272.433M",
+              "longFmt": "272,433,152"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/cardano",
+            "regularMarketChange": {
+              "raw": 0.016711473,
+              "fmt": "0.016711"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 272433152,
+              "fmt": "272.433M",
+              "longFmt": "272,433,152"
+            },
+            "fiftyDayAverage": {
+              "raw": 0.6577948,
+              "fmt": "0.66"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.5948459,
+              "fmt": "0.594846"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Cardano USD"
+          },
+          {
+            "symbol": "TON11419-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 1.1104542,
+              "fmt": "111.05%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 3.6181753,
+              "fmt": "361.82%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 3470620160,
+              "fmt": "3.471B",
+              "longFmt": "3,470,620,160"
+            },
+            "regularMarketDayRange": {
+              "raw": "5.3837 - 5.485068",
+              "fmt": "5.38 - 5.49"
+            },
+            "regularMarketDayHigh": {
+              "raw": 5.485068,
+              "fmt": "5.4851"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 2.8399897,
+              "fmt": "2.84"
+            },
+            "fromCurrency": "TON11419",
+            "twoHundredDayAverage": {
+              "raw": 2.5575027,
+              "fmt": "2.56"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.2759657,
+              "fmt": "-0.28"
+            },
+            "marketCap": {
+              "raw": 18732646400,
+              "fmt": "18.733B",
+              "longFmt": "18,732,646,400"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "1.16875 - 5.673458",
+              "fmt": "1.17 - 5.67"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 1.7896225,
+              "fmt": "1.79"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1630022400000,
+            "averageDailyVolume3Month": {
+              "raw": 104625660,
+              "fmt": "104.626M",
+              "longFmt": "104,625,660"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 146.23799,
+              "fmt": "146.24%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 1.16875,
+              "fmt": "1.1688"
+            },
+            "regularMarketVolume": {
+              "raw": 131254872,
+              "fmt": "131.255M",
+              "longFmt": "131,254,872"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_TON11419_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 4,
+            "regularMarketDayLow": {
+              "raw": 5.3837,
+              "fmt": "5.3837"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Toncoin USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.496033,
+              "fmt": "49.60%"
+            },
+            "startDate": {
+              "raw": 1629936000,
+              "fmt": "2021-08-26",
+              "longFmt": "2021-08-26T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 5.4799314,
+              "fmt": "5.4799"
+            },
+            "regularMarketTime": {
+              "raw": 1712497680,
+              "fmt": "1:48PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": -0.6909234,
+              "fmt": "-0.69%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 4.2287426,
+              "fmt": "4.23"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 178851699,
+              "fmt": "178.852M",
+              "longFmt": "178,851,699"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.048641533,
+              "fmt": "-4.86%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 5.4799314,
+              "fmt": "5.4799"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 5.673458,
+              "fmt": "5.6735"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 131254872,
+              "fmt": "131.255M",
+              "longFmt": "131,254,872"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/toncoin",
+            "regularMarketChange": {
+              "raw": -0.03755188,
+              "fmt": "-0.0376"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 131254872,
+              "fmt": "131.255M",
+              "longFmt": "131,254,872"
+            },
+            "fiftyDayAverage": {
+              "raw": 3.6078699,
+              "fmt": "3.61"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 5.3974924,
+              "fmt": "5.3975"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Toncoin USD"
+          },
+          {
+            "symbol": "AVAX-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.5840575,
+              "fmt": "58.41%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 4.5901833,
+              "fmt": "459.02%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 377884032,
+              "fmt": "377.884M",
+              "longFmt": "377,884,032"
+            },
+            "regularMarketDayRange": {
+              "raw": "48.198677 - 49.06941",
+              "fmt": "48.20 - 49.07"
+            },
+            "regularMarketDayHigh": {
+              "raw": 49.06941,
+              "fmt": "49.07"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 17.93473,
+              "fmt": "17.93"
+            },
+            "fromCurrency": "AVAX",
+            "twoHundredDayAverage": {
+              "raw": 30.70713,
+              "fmt": "30.71"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -16.60859,
+              "fmt": "-16.61"
+            },
+            "marketCap": {
+              "raw": 18380982272,
+              "fmt": "18.381B",
+              "longFmt": "18,380,982,272"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "8.7013 - 65.25045",
+              "fmt": "8.70 - 65.25"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 1.3277283,
+              "fmt": "1.33"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1594598400000,
+            "averageDailyVolume3Month": {
+              "raw": 827294069,
+              "fmt": "827.294M",
+              "longFmt": "827,294,069"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 174.4487,
+              "fmt": "174.45%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 8.7013,
+              "fmt": "8.70"
+            },
+            "regularMarketVolume": {
+              "raw": 421128192,
+              "fmt": "421.128M",
+              "longFmt": "421,128,192"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_AVAX_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 48.198677,
+              "fmt": "48.20"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Avalanche USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.02806198,
+              "fmt": "2.81%"
+            },
+            "startDate": {
+              "raw": 1594598400,
+              "fmt": "2020-07-13",
+              "longFmt": "2020-07-13T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 48.198677,
+              "fmt": "48.20"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 4.3067594,
+              "fmt": "4.31%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 39.94056,
+              "fmt": "39.94"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 523870237,
+              "fmt": "523.87M",
+              "longFmt": "523,870,237"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.254536,
+              "fmt": "-25.45%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 48.198677,
+              "fmt": "48.20"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 65.25045,
+              "fmt": "65.25"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 421128192,
+              "fmt": "421.128M",
+              "longFmt": "421,128,192"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/avalanche",
+            "regularMarketChange": {
+              "raw": 2.0083923,
+              "fmt": "2.01"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 421128192,
+              "fmt": "421.128M",
+              "longFmt": "421,128,192"
+            },
+            "fiftyDayAverage": {
+              "raw": 47.314133,
+              "fmt": "47.31"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 48.64186,
+              "fmt": "48.64"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Avalanche USD"
+          },
+          {
+            "symbol": "SHIB-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 1.243094,
+              "fmt": "124.31%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 3.7273207,
+              "fmt": "372.73%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 589289444343808,
+              "fmt": "589.289T",
+              "longFmt": "589,289,444,343,808"
+            },
+            "regularMarketDayRange": {
+              "raw": "2.7405358E-5 - 2.8886698E-5",
+              "fmt": "0.00 - 0.00"
+            },
+            "regularMarketDayHigh": {
+              "raw": 2.8886698E-5,
+              "fmt": "0.000029"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 1.5718924E-5,
+              "fmt": "0.00"
+            },
+            "fromCurrency": "SHIB",
+            "twoHundredDayAverage": {
+              "raw": 1.2645E-5,
+              "fmt": "0.00"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -1.6636075E-5,
+              "fmt": "-0.00"
+            },
+            "marketCap": {
+              "raw": 16714560512,
+              "fmt": "16.715B",
+              "longFmt": "16,714,560,512"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "6.0E-6 - 4.5E-5",
+              "fmt": "0.00 - 0.00"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 3.983925E-6,
+              "fmt": "0.00"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1596240000000,
+            "averageDailyVolume3Month": {
+              "raw": 1183693514,
+              "fmt": "1.184B",
+              "longFmt": "1,183,693,514"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 145.45454,
+              "fmt": "145.45%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 6.0E-6,
+              "fmt": "0.000006"
+            },
+            "regularMarketVolume": {
+              "raw": 544081984,
+              "fmt": "544.082M",
+              "longFmt": "544,081,984"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_SHIB_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 2.7405358E-5,
+              "fmt": "0.000027"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Shiba Inu USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.16340956,
+              "fmt": "16.34%"
+            },
+            "startDate": {
+              "raw": 1596240000,
+              "fmt": "2020-08-01",
+              "longFmt": "2020-08-01T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 2.746429E-5,
+              "fmt": "0.000027"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 4.9233522,
+              "fmt": "4.92%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 2.2363925E-5,
+              "fmt": "0.00"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 827262322,
+              "fmt": "827.262M",
+              "longFmt": "827,262,322"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.36969054,
+              "fmt": "-36.97%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 2.746429E-5,
+              "fmt": "0.000027"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 4.5E-5,
+              "fmt": "0.000045"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 544081984,
+              "fmt": "544.082M",
+              "longFmt": "544,081,984"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/shiba-inu",
+            "regularMarketChange": {
+              "raw": 1.3309309E-6,
+              "fmt": "0.000001"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 544081984,
+              "fmt": "544.082M",
+              "longFmt": "544,081,984"
+            },
+            "fiftyDayAverage": {
+              "raw": 2.438E-5,
+              "fmt": "0.00"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 2.8363926E-5,
+              "fmt": "0.000028"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Shiba Inu USD"
+          },
+          {
+            "symbol": "BCH-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 1.3917418,
+              "fmt": "139.17%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 6.164443,
+              "fmt": "616.44%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 19688440,
+              "fmt": "19.688M",
+              "longFmt": "19,688,440"
+            },
+            "regularMarketDayRange": {
+              "raw": "676.0867 - 707.39325",
+              "fmt": "676.09 - 707.39"
+            },
+            "regularMarketDayHigh": {
+              "raw": 707.39325,
+              "fmt": "707.39"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 399.28326,
+              "fmt": "399.28"
+            },
+            "fromCurrency": "BCH",
+            "twoHundredDayAverage": {
+              "raw": 286.89465,
+              "fmt": "286.89"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -27.884521,
+              "fmt": "-27.88"
+            },
+            "marketCap": {
+              "raw": 13509772288,
+              "fmt": "13.51B",
+              "longFmt": "13,509,772,288"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "95.775475 - 714.06244",
+              "fmt": "95.78 - 714.06"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 252.6351,
+              "fmt": "252.64"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 597071099,
+              "fmt": "597.071M",
+              "longFmt": "597,071,099"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 453.681,
+              "fmt": "453.68%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 95.775475,
+              "fmt": "95.78"
+            },
+            "regularMarketVolume": {
+              "raw": 805686080,
+              "fmt": "805.686M",
+              "longFmt": "805,686,080"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_BCH_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 676.0867,
+              "fmt": "676.09"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Bitcoin Cash USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.58272237,
+              "fmt": "58.27%"
+            },
+            "startDate": {
+              "raw": 1500768000,
+              "fmt": "2017-07-23",
+              "longFmt": "2017-07-23T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 695.18896,
+              "fmt": "695.19"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": -1.177412,
+              "fmt": "-1.18%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 590.40247,
+              "fmt": "590.40"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 1382640506,
+              "fmt": "1.383B",
+              "longFmt": "1,382,640,506"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.039050538,
+              "fmt": "-3.91%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 695.18896,
+              "fmt": "695.19"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 714.06244,
+              "fmt": "714.06"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 805686080,
+              "fmt": "805.686M",
+              "longFmt": "805,686,080"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/bitcoin-cash",
+            "regularMarketChange": {
+              "raw": -8.175415,
+              "fmt": "-8.18"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 805686080,
+              "fmt": "805.686M",
+              "longFmt": "805,686,080"
+            },
+            "fiftyDayAverage": {
+              "raw": 433.54282,
+              "fmt": "433.54"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 686.1779,
+              "fmt": "686.18"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Bitcoin Cash USD"
+          },
+          {
+            "symbol": "DOT-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.28998914,
+              "fmt": "29.00%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.4084308,
+              "fmt": "140.84%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 1430745088,
+              "fmt": "1.431B",
+              "longFmt": "1,430,745,088"
+            },
+            "regularMarketDayRange": {
+              "raw": "8.472217 - 8.690596",
+              "fmt": "8.47 - 8.69"
+            },
+            "regularMarketDayHigh": {
+              "raw": 8.690596,
+              "fmt": "8.6906"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 1.9532642,
+              "fmt": "1.95"
+            },
+            "fromCurrency": "DOT",
+            "twoHundredDayAverage": {
+              "raw": 6.7356462,
+              "fmt": "6.74"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -3.1935225,
+              "fmt": "-3.19"
+            },
+            "marketCap": {
+              "raw": 12431616000,
+              "fmt": "12.432B",
+              "longFmt": "12,431,616,000"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "3.607706 - 11.882433",
+              "fmt": "3.61 - 11.88"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.52475166,
+              "fmt": "-0.52"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1597881600000,
+            "averageDailyVolume3Month": {
+              "raw": 337385200,
+              "fmt": "337.385M",
+              "longFmt": "337,385,200"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 36.645626,
+              "fmt": "36.65%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 3.607706,
+              "fmt": "3.6077"
+            },
+            "regularMarketVolume": {
+              "raw": 168438624,
+              "fmt": "168.439M",
+              "longFmt": "168,438,624"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_DOT_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 4,
+            "regularMarketDayLow": {
+              "raw": 8.472217,
+              "fmt": "8.4722"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Polkadot USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.056953646,
+              "fmt": "-5.70%"
+            },
+            "startDate": {
+              "raw": 1597795200,
+              "fmt": "2020-08-19",
+              "longFmt": "2020-08-19T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 8.493088,
+              "fmt": "8.4931"
+            },
+            "regularMarketTime": {
+              "raw": 1712497920,
+              "fmt": "1:52PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 4.0403895,
+              "fmt": "4.04%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 5.0812044,
+              "fmt": "5.08"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 240417669,
+              "fmt": "240.418M",
+              "longFmt": "240,417,669"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.26876,
+              "fmt": "-26.88%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 8.493088,
+              "fmt": "8.4931"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 11.882433,
+              "fmt": "11.8824"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 168438624,
+              "fmt": "168.439M",
+              "longFmt": "168,438,624"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/polkadot-new",
+            "regularMarketChange": {
+              "raw": 0.3374319,
+              "fmt": "0.3374"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 168438624,
+              "fmt": "168.439M",
+              "longFmt": "168,438,624"
+            },
+            "fiftyDayAverage": {
+              "raw": 9.213662,
+              "fmt": "9.21"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 8.6889105,
+              "fmt": "8.6889"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Polkadot USD"
+          },
+          {
+            "symbol": "WBTC-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.55906385,
+              "fmt": "55.91%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.7968336,
+              "fmt": "179.68%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 155417,
+              "fmt": "155,417",
+              "longFmt": "155,417"
+            },
+            "regularMarketDayRange": {
+              "raw": "68934.18 - 69574.91",
+              "fmt": "68,934.18 - 69,574.91"
+            },
+            "regularMarketDayHigh": {
+              "raw": 69574.91,
+              "fmt": "69,574.91"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 24901.566,
+              "fmt": "24,901.57"
+            },
+            "fromCurrency": "WBTC",
+            "twoHundredDayAverage": {
+              "raw": 44541.543,
+              "fmt": "44,541.54"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -4062.625,
+              "fmt": "-4,062.62"
+            },
+            "marketCap": {
+              "raw": 10792695808,
+              "fmt": "10.793B",
+              "longFmt": "10,792,695,808"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "24829.19 - 73505.734",
+              "fmt": "24,829.19 - 73,505.73"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 5339.1914,
+              "fmt": "5,339.19"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1548806400000,
+            "averageDailyVolume3Month": {
+              "raw": 295535191,
+              "fmt": "295.535M",
+              "longFmt": "295,535,191"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 143.43011,
+              "fmt": "143.43%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 24829.19,
+              "fmt": "24,829.19"
+            },
+            "regularMarketVolume": {
+              "raw": 131986480,
+              "fmt": "131.986M",
+              "longFmt": "131,986,480"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_WBTC_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 68934.18,
+              "fmt": "68,934.18"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Wrapped Bitcoin USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.08328962,
+              "fmt": "8.33%"
+            },
+            "startDate": {
+              "raw": 1548806400,
+              "fmt": "2019-01-30",
+              "longFmt": "2019-01-30T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 68985.73,
+              "fmt": "68,985.73"
+            },
+            "regularMarketTime": {
+              "raw": 1712497680,
+              "fmt": "1:48PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.4310539,
+              "fmt": "2.43%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 44613.92,
+              "fmt": "44,613.92"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 206619986,
+              "fmt": "206.62M",
+              "longFmt": "206,619,986"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.0552695,
+              "fmt": "-5.53%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 68985.73,
+              "fmt": "68,985.73"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 73505.734,
+              "fmt": "73,505.73"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 131986480,
+              "fmt": "131.986M",
+              "longFmt": "131,986,480"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/wrapped-bitcoin",
+            "regularMarketChange": {
+              "raw": 1648.1328,
+              "fmt": "1,648.13"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 131986480,
+              "fmt": "131.986M",
+              "longFmt": "131,986,480"
+            },
+            "fiftyDayAverage": {
+              "raw": 64103.918,
+              "fmt": "64,103.92"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 69443.11,
+              "fmt": "69,443.11"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Wrapped Bitcoin USD"
+          },
+          {
+            "symbol": "TRX-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.103959784,
+              "fmt": "10.40%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.9268012,
+              "fmt": "92.68%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 87686725632,
+              "fmt": "87.687B",
+              "longFmt": "87,686,725,632"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.11964132 - 0.120636165",
+              "fmt": "0.12 - 0.12"
+            },
+            "regularMarketDayHigh": {
+              "raw": 0.120636165,
+              "fmt": "0.120636"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 0.011357836,
+              "fmt": "0.01"
+            },
+            "fromCurrency": "TRX",
+            "twoHundredDayAverage": {
+              "raw": 0.109252214,
+              "fmt": "0.11"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.023515947,
+              "fmt": "-0.02"
+            },
+            "marketCap": {
+              "raw": 10575900672,
+              "fmt": "10.576B",
+              "longFmt": "10,575,900,672"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.062596 - 0.144126",
+              "fmt": "0.06 - 0.14"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.009044088,
+              "fmt": "-0.01"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 330272164,
+              "fmt": "330.272M",
+              "longFmt": "330,272,164"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 79.519,
+              "fmt": "79.52%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.062596,
+              "fmt": "0.062596"
+            },
+            "regularMarketVolume": {
+              "raw": 183634640,
+              "fmt": "183.635M",
+              "longFmt": "183,634,640"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_TRX_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.11964132,
+              "fmt": "0.119641"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "TRON USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.069755495,
+              "fmt": "-6.98%"
+            },
+            "startDate": {
+              "raw": 1505260800,
+              "fmt": "2017-09-13",
+              "longFmt": "2017-09-13T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 0.11965629,
+              "fmt": "0.119656"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 1.6138299,
+              "fmt": "1.61%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.05801405,
+              "fmt": "0.06"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 276902396,
+              "fmt": "276.902M",
+              "longFmt": "276,902,396"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.16316243,
+              "fmt": "-16.32%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 0.11965629,
+              "fmt": "0.119656"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 0.144126,
+              "fmt": "0.144126"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 183634640,
+              "fmt": "183.635M",
+              "longFmt": "183,634,640"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/tron",
+            "regularMarketChange": {
+              "raw": 0.0019155294,
+              "fmt": "0.001916"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 183634640,
+              "fmt": "183.635M",
+              "longFmt": "183,634,640"
+            },
+            "fiftyDayAverage": {
+              "raw": 0.12965414,
+              "fmt": "0.13"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.12061005,
+              "fmt": "0.120610"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "TRON USD"
+          },
+          {
+            "symbol": "WTRX-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.10367756,
+              "fmt": "10.37%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.90573615,
+              "fmt": "90.57%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 87686692864,
+              "fmt": "87.687B",
+              "longFmt": "87,686,692,864"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.11948633 - 0.120358676",
+              "fmt": "0.12 - 0.12"
+            },
+            "regularMarketDayHigh": {
+              "raw": 0.120358676,
+              "fmt": "0.120359"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 0.011306286,
+              "fmt": "0.01"
+            },
+            "fromCurrency": "WTRX",
+            "twoHundredDayAverage": {
+              "raw": 0.10905239,
+              "fmt": "0.11"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.02337633,
+              "fmt": "-0.02"
+            },
+            "marketCap": {
+              "raw": 10553853952,
+              "fmt": "10.554B",
+              "longFmt": "10,553,853,952"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.063156 - 0.143735",
+              "fmt": "0.06 - 0.14"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.009186551,
+              "fmt": "-0.01"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1646438400000,
+            "averageDailyVolume3Month": {
+              "raw": 2581637,
+              "fmt": "2.582M",
+              "longFmt": "2,581,637"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 79.57215,
+              "fmt": "79.57%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/18579.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.063156,
+              "fmt": "0.063156"
+            },
+            "regularMarketVolume": {
+              "raw": 779302,
+              "fmt": "779,302",
+              "longFmt": "779,302"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_WTRX_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.11948633,
+              "fmt": "0.119486"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Wrapped TRON USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.07091385,
+              "fmt": "-7.09%"
+            },
+            "startDate": {
+              "raw": 1505260800,
+              "fmt": "2017-09-13",
+              "longFmt": "2017-09-13T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/18579.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 0.11953374,
+              "fmt": "0.119534"
+            },
+            "regularMarketTime": {
+              "raw": 1712497740,
+              "fmt": "1:49PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 1.6596799,
+              "fmt": "1.66%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.057202674,
+              "fmt": "0.06"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 1833792,
+              "fmt": "1.834M",
+              "longFmt": "1,833,792"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.16263491,
+              "fmt": "-16.26%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 0.11953374,
+              "fmt": "0.119534"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 0.143735,
+              "fmt": "0.143735"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 779302,
+              "fmt": "779,302",
+              "longFmt": "779,302"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/wrapped-tron",
+            "regularMarketChange": {
+              "raw": 0.0019649565,
+              "fmt": "0.001965"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 779302,
+              "fmt": "779,302",
+              "longFmt": "779,302"
+            },
+            "fiftyDayAverage": {
+              "raw": 0.12954523,
+              "fmt": "0.13"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.120358676,
+              "fmt": "0.120359"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Wrapped TRON USD"
+          },
+          {
+            "symbol": "LINK-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.200294,
+              "fmt": "20.03%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 2.5671973,
+              "fmt": "256.72%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 587099968,
+              "fmt": "587.1M",
+              "longFmt": "587,099,968"
+            },
+            "regularMarketDayRange": {
+              "raw": "17.525206 - 17.818106",
+              "fmt": "17.53 - 17.82"
+            },
+            "regularMarketDayHigh": {
+              "raw": 17.818106,
+              "fmt": "17.82"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 2.9644985,
+              "fmt": "2.96"
+            },
+            "fromCurrency": "LINK",
+            "twoHundredDayAverage": {
+              "raw": 14.800735,
+              "fmt": "14.80"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -5.0600147,
+              "fmt": "-5.06"
+            },
+            "marketCap": {
+              "raw": 10429968384,
+              "fmt": "10.43B",
+              "longFmt": "10,429,968,384"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "4.980166 - 22.825249",
+              "fmt": "4.98 - 22.83"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -1.429657,
+              "fmt": "-1.43"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1510185600000,
+            "averageDailyVolume3Month": {
+              "raw": 602682908,
+              "fmt": "602.683M",
+              "longFmt": "602,682,908"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 143.67719,
+              "fmt": "143.68%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 4.980166,
+              "fmt": "4.98"
+            },
+            "regularMarketVolume": {
+              "raw": 209104800,
+              "fmt": "209.105M",
+              "longFmt": "209,104,800"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_LINK_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 17.525206,
+              "fmt": "17.53"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Chainlink USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.07448112,
+              "fmt": "-7.45%"
+            },
+            "startDate": {
+              "raw": 1505865600,
+              "fmt": "2017-09-20",
+              "longFmt": "2017-09-20T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 17.573126,
+              "fmt": "17.57"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 1.8259356,
+              "fmt": "1.83%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 12.7850685,
+              "fmt": "12.79"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 375690372,
+              "fmt": "375.69M",
+              "longFmt": "375,690,372"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.22168498,
+              "fmt": "-22.17%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 17.573126,
+              "fmt": "17.57"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 22.825249,
+              "fmt": "22.83"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 209104800,
+              "fmt": "209.105M",
+              "longFmt": "209,104,800"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/chainlink",
+            "regularMarketChange": {
+              "raw": 0.31856537,
+              "fmt": "0.32"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 209104800,
+              "fmt": "209.105M",
+              "longFmt": "209,104,800"
+            },
+            "fiftyDayAverage": {
+              "raw": 19.194891,
+              "fmt": "19.19"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 17.765234,
+              "fmt": "17.77"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Chainlink USD"
+          },
+          {
+            "symbol": "MATIC-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.10904408,
+              "fmt": "10.90%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.84593433,
+              "fmt": "84.59%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 9902239744,
+              "fmt": "9.902B",
+              "longFmt": "9,902,239,744"
+            },
+            "regularMarketDayRange": {
+              "raw": "0.8952349 - 0.9136996",
+              "fmt": "0.90 - 0.91"
+            },
+            "regularMarketDayHigh": {
+              "raw": 0.9136996,
+              "fmt": "0.913700"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 0.089770794,
+              "fmt": "0.09"
+            },
+            "fromCurrency": "MATIC",
+            "twoHundredDayAverage": {
+              "raw": 0.8232523,
+              "fmt": "0.82"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -0.37415886,
+              "fmt": "-0.37"
+            },
+            "marketCap": {
+              "raw": 9040973824,
+              "fmt": "9.041B",
+              "longFmt": "9,040,973,824"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.494613 - 1.287182",
+              "fmt": "0.49 - 1.29"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.12280655,
+              "fmt": "-0.12"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1556409600000,
+            "averageDailyVolume3Month": {
+              "raw": 498785257,
+              "fmt": "498.785M",
+              "longFmt": "498,785,257"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": -18.54142,
+              "fmt": "-18.54%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.494613,
+              "fmt": "0.494613"
+            },
+            "regularMarketVolume": {
+              "raw": 194870128,
+              "fmt": "194.87M",
+              "longFmt": "194,870,128"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_MATIC_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 6,
+            "regularMarketDayLow": {
+              "raw": 0.8952349,
+              "fmt": "0.895235"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Polygon USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.11855863,
+              "fmt": "-11.86%"
+            },
+            "startDate": {
+              "raw": 1556409600,
+              "fmt": "2019-04-28",
+              "longFmt": "2019-04-28T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 0.897626,
+              "fmt": "0.897626"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.7812848,
+              "fmt": "2.78%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 0.41841012,
+              "fmt": "0.42"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 292067381,
+              "fmt": "292.067M",
+              "longFmt": "292,067,381"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.29068062,
+              "fmt": "-29.07%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 0.897626,
+              "fmt": "0.897626"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 1.287182,
+              "fmt": "1.287182"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 194870128,
+              "fmt": "194.87M",
+              "longFmt": "194,870,128"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/polygon",
+            "regularMarketChange": {
+              "raw": 0.024706602,
+              "fmt": "0.024707"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 194870128,
+              "fmt": "194.87M",
+              "longFmt": "194,870,128"
+            },
+            "fiftyDayAverage": {
+              "raw": 1.0358297,
+              "fmt": "1.04"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 0.9130231,
+              "fmt": "0.913023"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Polygon USD"
+          },
+          {
+            "symbol": "ICP-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.892572,
+              "fmt": "89.26%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 5.022947,
+              "fmt": "502.29%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 462174016,
+              "fmt": "462.174M",
+              "longFmt": "462,174,016"
+            },
+            "regularMarketDayRange": {
+              "raw": "17.026968 - 17.280727",
+              "fmt": "17.03 - 17.28"
+            },
+            "regularMarketDayHigh": {
+              "raw": 17.280727,
+              "fmt": "17.28"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 8.130179,
+              "fmt": "8.13"
+            },
+            "fromCurrency": "ICP",
+            "twoHundredDayAverage": {
+              "raw": 9.10871,
+              "fmt": "9.11"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -3.6569958,
+              "fmt": "-3.66"
+            },
+            "marketCap": {
+              "raw": 7967366656,
+              "fmt": "7.967B",
+              "longFmt": "7,967,366,656"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "2.862202 - 20.895885",
+              "fmt": "2.86 - 20.90"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 2.6639566,
+              "fmt": "2.66"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1620604800000,
+            "averageDailyVolume3Month": {
+              "raw": 204022530,
+              "fmt": "204.023M",
+              "longFmt": "204,022,530"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 239.30743,
+              "fmt": "239.31%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/8916.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 2.862202,
+              "fmt": "2.86"
+            },
+            "regularMarketVolume": {
+              "raw": 96754544,
+              "fmt": "96.755M",
+              "longFmt": "96,754,544"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_ICP_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 17.026968,
+              "fmt": "17.03"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Internet Computer USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.1827766,
+              "fmt": "18.28%"
+            },
+            "startDate": {
+              "raw": 1616457600,
+              "fmt": "2021-03-23",
+              "longFmt": "2021-03-23T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/8916.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 17.042099,
+              "fmt": "17.04"
+            },
+            "regularMarketTime": {
+              "raw": 1712497920,
+              "fmt": "1:52PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.6041052,
+              "fmt": "2.60%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 14.376688,
+              "fmt": "14.38"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 239862506,
+              "fmt": "239.863M",
+              "longFmt": "239,862,506"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.17501032,
+              "fmt": "-17.50%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 17.042099,
+              "fmt": "17.04"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 20.895885,
+              "fmt": "20.90"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 96754544,
+              "fmt": "96.755M",
+              "longFmt": "96,754,544"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/internet-computer",
+            "regularMarketChange": {
+              "raw": 0.4375248,
+              "fmt": "0.44"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 96754544,
+              "fmt": "96.755M",
+              "longFmt": "96,754,544"
+            },
+            "fiftyDayAverage": {
+              "raw": 14.574933,
+              "fmt": "14.57"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 17.23889,
+              "fmt": "17.24"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Internet Computer USD"
+          },
+          {
+            "symbol": "LTC-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.4072201,
+              "fmt": "40.72%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 0.7842503,
+              "fmt": "78.43%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 74395704,
+              "fmt": "74.396M",
+              "longFmt": "74,395,704"
+            },
+            "regularMarketDayRange": {
+              "raw": "101.090454 - 105.65048",
+              "fmt": "101.09 - 105.65"
+            },
+            "regularMarketDayHigh": {
+              "raw": 105.65048,
+              "fmt": "105.65"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 29.966576,
+              "fmt": "29.97"
+            },
+            "fromCurrency": "LTC",
+            "twoHundredDayAverage": {
+              "raw": 73.58816,
+              "fmt": "73.59"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -10.942329,
+              "fmt": "-10.94"
+            },
+            "marketCap": {
+              "raw": 7704027648,
+              "fmt": "7.704B",
+              "longFmt": "7,704,027,648"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "58.03823 - 114.49706",
+              "fmt": "58.04 - 114.50"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 16.49746,
+              "fmt": "16.50"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1410912000000,
+            "averageDailyVolume3Month": {
+              "raw": 556418382,
+              "fmt": "556.418M",
+              "longFmt": "556,418,382"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 11.938084,
+              "fmt": "11.94%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 58.03823,
+              "fmt": "58.04"
+            },
+            "regularMarketVolume": {
+              "raw": 558792128,
+              "fmt": "558.792M",
+              "longFmt": "558,792,128"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_LTC_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 101.090454,
+              "fmt": "101.09"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Litecoin USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.18950121,
+              "fmt": "18.95%"
+            },
+            "startDate": {
+              "raw": 1367107200,
+              "fmt": "2013-04-28",
+              "longFmt": "2013-04-28T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 101.510796,
+              "fmt": "101.51"
+            },
+            "regularMarketTime": {
+              "raw": 1712497920,
+              "fmt": "1:52PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.1902452,
+              "fmt": "2.19%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 45.516502,
+              "fmt": "45.52"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 998085528,
+              "fmt": "998.086M",
+              "longFmt": "998,085,528"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.09556865,
+              "fmt": "-9.56%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 101.510796,
+              "fmt": "101.51"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 114.49706,
+              "fmt": "114.50"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 558792128,
+              "fmt": "558.792M",
+              "longFmt": "558,792,128"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/litecoin",
+            "regularMarketChange": {
+              "raw": 2.21949,
+              "fmt": "2.22"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 558792128,
+              "fmt": "558.792M",
+              "longFmt": "558,792,128"
+            },
+            "fiftyDayAverage": {
+              "raw": 87.057274,
+              "fmt": "87.06"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 103.55473,
+              "fmt": "103.55"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Litecoin USD"
+          },
+          {
+            "symbol": "NEAR-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 1.2365868,
+              "fmt": "123.66%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 6.1608715,
+              "fmt": "616.09%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 1059699456,
+              "fmt": "1.06B",
+              "longFmt": "1,059,699,456"
+            },
+            "regularMarketDayRange": {
+              "raw": "6.9292636 - 7.128741",
+              "fmt": "6.93 - 7.13"
+            },
+            "regularMarketDayHigh": {
+              "raw": 7.128741,
+              "fmt": "7.1287"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 3.8498704,
+              "fmt": "3.85"
+            },
+            "fromCurrency": "NEAR",
+            "twoHundredDayAverage": {
+              "raw": 3.113304,
+              "fmt": "3.11"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -2.0219293,
+              "fmt": "-2.02"
+            },
+            "marketCap": {
+              "raw": 7378871808,
+              "fmt": "7.379B",
+              "longFmt": "7,378,871,808"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "0.972392 - 8.985104",
+              "fmt": "0.97 - 8.99"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 1.1686702,
+              "fmt": "1.17"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1602633600000,
+            "averageDailyVolume3Month": {
+              "raw": 414881132,
+              "fmt": "414.881M",
+              "longFmt": "414,881,132"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 249.43686,
+              "fmt": "249.44%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 0.972392,
+              "fmt": "0.9724"
+            },
+            "regularMarketVolume": {
+              "raw": 337066880,
+              "fmt": "337.067M",
+              "longFmt": "337,066,880"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_NEAR_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 4,
+            "regularMarketDayLow": {
+              "raw": 6.9292636,
+              "fmt": "6.9293"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "NEAR Protocol USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.20168597,
+              "fmt": "20.17%"
+            },
+            "startDate": {
+              "raw": 1597104000,
+              "fmt": "2020-08-11",
+              "longFmt": "2020-08-11T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 7.0234356,
+              "fmt": "7.0234"
+            },
+            "regularMarketTime": {
+              "raw": 1712497740,
+              "fmt": "1:49PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 0.42553163,
+              "fmt": "0.43%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 5.9907823,
+              "fmt": "5.99"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 403694055,
+              "fmt": "403.694M",
+              "longFmt": "403,694,055"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.22503127,
+              "fmt": "-22.50%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 7.0234356,
+              "fmt": "7.0234"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 8.985104,
+              "fmt": "8.9851"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 337066880,
+              "fmt": "337.067M",
+              "longFmt": "337,066,880"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/near-protocol",
+            "regularMarketChange": {
+              "raw": 0.029504776,
+              "fmt": "0.0295"
+            },
+            "cryptoTradeable": true,
+            "volumeAllCurrencies": {
+              "raw": 337066880,
+              "fmt": "337.067M",
+              "longFmt": "337,066,880"
+            },
+            "fiftyDayAverage": {
+              "raw": 5.794504,
+              "fmt": "5.79"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 6.9631743,
+              "fmt": "6.9632"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "NEAR Protocol USD"
+          },
+          {
+            "symbol": "UNI7083-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.5818787,
+              "fmt": "58.19%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 2.0133803,
+              "fmt": "201.34%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 598736128,
+              "fmt": "598.736M",
+              "longFmt": "598,736,128"
+            },
+            "regularMarketDayRange": {
+              "raw": "11.217537 - 11.438223",
+              "fmt": "11.22 - 11.44"
+            },
+            "regularMarketDayHigh": {
+              "raw": 11.438223,
+              "fmt": "11.44"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 4.167681,
+              "fmt": "4.17"
+            },
+            "fromCurrency": "UNI7083",
+            "twoHundredDayAverage": {
+              "raw": 7.162457,
+              "fmt": "7.16"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -5.6148787,
+              "fmt": "-5.61"
+            },
+            "marketCap": {
+              "raw": 6783762944,
+              "fmt": "6.784B",
+              "longFmt": "6,783,762,944"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "3.759943 - 16.945017",
+              "fmt": "3.76 - 16.95"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": -0.48567677,
+              "fmt": "-0.49"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1600387200000,
+            "averageDailyVolume3Month": {
+              "raw": 230540679,
+              "fmt": "230.541M",
+              "longFmt": "230,540,679"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 90.02683,
+              "fmt": "90.03%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 3.759943,
+              "fmt": "3.76"
+            },
+            "regularMarketVolume": {
+              "raw": 147394064,
+              "fmt": "147.394M",
+              "longFmt": "147,394,064"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_UNI7083_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 11.217537,
+              "fmt": "11.22"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Uniswap USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": -0.04110396,
+              "fmt": "-4.11%"
+            },
+            "startDate": {
+              "raw": 1600300800,
+              "fmt": "2020-09-17",
+              "longFmt": "2020-09-17T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 11.2494,
+              "fmt": "11.25"
+            },
+            "regularMarketTime": {
+              "raw": 1712497860,
+              "fmt": "1:51PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 2.2663767,
+              "fmt": "2.27%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 7.570195,
+              "fmt": "7.57"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 166889852,
+              "fmt": "166.89M",
+              "longFmt": "166,889,852"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.3313587,
+              "fmt": "-33.14%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 11.2494,
+              "fmt": "11.25"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 16.945017,
+              "fmt": "16.95"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 147394064,
+              "fmt": "147.394M",
+              "longFmt": "147,394,064"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/uniswap",
+            "regularMarketChange": {
+              "raw": 0.25109196,
+              "fmt": "0.25"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 147394064,
+              "fmt": "147.394M",
+              "longFmt": "147,394,064"
+            },
+            "fiftyDayAverage": {
+              "raw": 11.815815,
+              "fmt": "11.82"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 11.330138,
+              "fmt": "11.33"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Uniswap USD"
+          },
+          {
+            "symbol": "APT21794-USD",
+            "twoHundredDayAverageChangePercent": {
+              "raw": 0.5147697,
+              "fmt": "51.48%"
+            },
+            "fiftyTwoWeekLowChangePercent": {
+              "raw": 1.890847,
+              "fmt": "189.08%"
+            },
+            "language": "en-US",
+            "circulatingSupply": {
+              "raw": 398425952,
+              "fmt": "398.426M",
+              "longFmt": "398,425,952"
+            },
+            "regularMarketDayRange": {
+              "raw": "13.12944 - 13.821999",
+              "fmt": "13.13 - 13.82"
+            },
+            "regularMarketDayHigh": {
+              "raw": 13.821999,
+              "fmt": "13.82"
+            },
+            "twoHundredDayAverageChange": {
+              "raw": 4.6652613,
+              "fmt": "4.67"
+            },
+            "fromCurrency": "APT21794",
+            "twoHundredDayAverage": {
+              "raw": 9.062813,
+              "fmt": "9.06"
+            },
+            "fiftyTwoWeekHighChange": {
+              "raw": -5.561715,
+              "fmt": "-5.56"
+            },
+            "marketCap": {
+              "raw": 5469621248,
+              "fmt": "5.47B",
+              "longFmt": "5,469,621,248"
+            },
+            "fiftyTwoWeekRange": {
+              "raw": "4.748807 - 19.28979",
+              "fmt": "4.75 - 19.29"
+            },
+            "lastMarket": "CoinMarketCap",
+            "fiftyDayAverageChange": {
+              "raw": 0.31224728,
+              "fmt": "0.31"
+            },
+            "exchangeDataDelayedBy": 0,
+            "firstTradeDateMilliseconds": 1666137600000,
+            "averageDailyVolume3Month": {
+              "raw": 293858953,
+              "fmt": "293.859M",
+              "longFmt": "293,858,953"
+            },
+            "fiftyTwoWeekChangePercent": {
+              "raw": 19.334888,
+              "fmt": "19.33%"
+            },
+            "logoUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/21794.png",
+            "hasPrePostMarketData": false,
+            "fiftyTwoWeekLow": {
+              "raw": 4.748807,
+              "fmt": "4.75"
+            },
+            "regularMarketVolume": {
+              "raw": 191852864,
+              "fmt": "191.853M",
+              "longFmt": "191,852,864"
+            },
+            "market": "ccc_market",
+            "quoteSourceName": "CoinMarketCap",
+            "messageBoardId": "finmb_APT21794_CCC",
+            "toCurrency": "USD=X",
+            "priceHint": 2,
+            "regularMarketDayLow": {
+              "raw": 13.12944,
+              "fmt": "13.13"
+            },
+            "exchange": "CCC",
+            "sourceInterval": 15,
+            "region": "US",
+            "shortName": "Aptos USD",
+            "fiftyDayAverageChangePercent": {
+              "raw": 0.023274546,
+              "fmt": "2.33%"
+            },
+            "startDate": {
+              "raw": 1666137600,
+              "fmt": "2022-10-19",
+              "longFmt": "2022-10-19T00:00"
+            },
+            "fullExchangeName": "CCC",
+            "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/21794.png",
+            "gmtOffSetMilliseconds": 0,
+            "regularMarketOpen": {
+              "raw": 13.223857,
+              "fmt": "13.22"
+            },
+            "regularMarketTime": {
+              "raw": 1712497680,
+              "fmt": "1:48PM UTC"
+            },
+            "regularMarketChangePercent": {
+              "raw": 6.0231357,
+              "fmt": "6.02%"
+            },
+            "quoteType": "CRYPTOCURRENCY",
+            "fiftyTwoWeekLowChange": {
+              "raw": 8.979267,
+              "fmt": "8.98"
+            },
+            "averageDailyVolume10Day": {
+              "raw": 316026629,
+              "fmt": "316.027M",
+              "longFmt": "316,026,629"
+            },
+            "fiftyTwoWeekHighChangePercent": {
+              "raw": -0.2883243,
+              "fmt": "-28.83%"
+            },
+            "typeDisp": "Cryptocurrency",
+            "tradeable": false,
+            "currency": "USD",
+            "regularMarketPreviousClose": {
+              "raw": 13.223857,
+              "fmt": "13.22"
+            },
+            "fiftyTwoWeekHigh": {
+              "raw": 19.28979,
+              "fmt": "19.29"
+            },
+            "exchangeTimezoneName": "UTC",
+            "volume24Hr": {
+              "raw": 191852864,
+              "fmt": "191.853M",
+              "longFmt": "191,852,864"
+            },
+            "coinMarketCapLink": "https://coinmarketcap.com/currencies/aptos",
+            "regularMarketChange": {
+              "raw": 0.77988625,
+              "fmt": "0.78"
+            },
+            "cryptoTradeable": false,
+            "volumeAllCurrencies": {
+              "raw": 191852864,
+              "fmt": "191.853M",
+              "longFmt": "191,852,864"
+            },
+            "fiftyDayAverage": {
+              "raw": 13.415827,
+              "fmt": "13.42"
+            },
+            "exchangeTimezoneShortName": "UTC",
+            "regularMarketPrice": {
+              "raw": 13.728074,
+              "fmt": "13.73"
+            },
+            "marketState": "REGULAR",
+            "customPriceAlertConfidence": "LOW",
+            "triggerable": false,
+            "longName": "Aptos USD"
+          }
+        ],
+        "useRecords": false
+      }
+    ],
+    "error": null
+  }
+}

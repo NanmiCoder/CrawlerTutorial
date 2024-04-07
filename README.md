@@ -23,10 +23,7 @@
 <a href="https://sider.ai/ad-land-redirect?source=github&p1=mi&p2=kk">通过注册这个款免费的GPT助手，帮我获取GPT4额度作为支持。也是我每天在用的一款chrome AI助手插件</a>
 <a href="https://sider.ai/ad-land-redirect?source=github&p1=mi&p2=kk" target="_blank"><img src="https://s2.loli.net/2024/04/01/jK8drZ2bxTg67q9.png" ></a>
 
-## 爬虫教程交流群：
-> 7天有效期，自动更新
 
-![img.png](static/images/qrcode/1.png)
 
 ## 爬虫入门
 ### 爬虫入门教程目录大纲
@@ -38,10 +35,22 @@
 - [x] [06_为什么说用Python写爬虫有天生优势](爬虫入门/06_为什么说用Python写爬虫有天生优势.md)
 - [x] [07_Python常见的网络请求库](爬虫入门/07_Python常见的网络请求库.md)
 - [x] [08_爬虫入门实战1_静态网页数据提取](爬虫入门/08_爬虫入门实战1_静态网页数据提取.md)
-- [ ] [09_爬虫入门实战2_动态数据提取](爬虫入门/09_爬虫入门实战2_动态数据提取.md)
+- [x] [09_爬虫入门实战2_动态数据提取](爬虫入门/09_爬虫入门实战2_动态数据提取.md)
 - [ ] [10_爬虫入门实战3_数据存储实现](爬虫入门/10_爬虫入门实战3_数据存储实现.md)
 - [ ] [11_爬虫入门实战4_高效率的爬虫实现](爬虫入门/11_爬虫入门实战4_高效率的爬虫实现.md)
 - [ ] [12_爬虫入门实战5_编写易于维护的爬虫代码](爬虫入门/12_爬虫入门实战5_编写易于维护的爬虫代码.md)
+
+## 打赏
+免费开源不易，如果项目帮到你了，可以给我打赏哦，您的支持就是我最大的动力！
+<div style="display: flex;justify-content: space-between;width: 100%">
+    <p><img alt="打赏-微信" src="static/images/wechat_pay.jpeg" style="width: 200px;height: 100%" ></p>
+    <p><img alt="打赏-支付宝" src="static/images/zfb_pay.png"   style="width: 200px;height: 100%" ></p>
+</div>
+
+## 爬虫教程交流群：
+> 7天有效期，自动更新
+<p><img alt="交流群二维码" src="static/images/qrcode/1.png" style="width: 200px;height: 100%" ></p>
+
 ### 爬虫入门教程源代码
  
 ## 爬虫进阶

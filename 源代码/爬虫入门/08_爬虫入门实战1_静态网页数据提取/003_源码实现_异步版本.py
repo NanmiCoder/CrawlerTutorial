@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Author  : relakkes@gmail.com
+# @Name    : 程序员阿江-Relakkes
 # @Time    : 2024/3/27 23:50
 # @Desc    : https://www.ptt.cc/bbs/Stock/index.html 前N页帖子数据获取 - 异步版本
 

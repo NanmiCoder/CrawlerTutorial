@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Author  : relakkes@gmail.com
+# @Name    : 程序员阿江-Relakkes
 # @Time    : 2024/3/27 22:47
 # @Desc    : 分别使用两个库演示如何提取html文档结构数据
 from bs4 import BeautifulSoup

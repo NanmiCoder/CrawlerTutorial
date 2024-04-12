@@ -48,8 +48,8 @@
 </div>
 
 ## 爬虫教程交流群：
-> 7天有效期，自动更新
-<p><img alt="交流群二维码" src="static/images/qrcode/1.png" style="width: 200px;height: 100%" ></p>
+> > 7天有效期，自动更新, 如果人满了或者二维码过期了可以加作者微信拉进群: yzglan，备注:github爬虫教程.
+<p><img alt="交流群二维码" src="static/images/qrcode/1.JPG" style="width: 200px;height: 100%" ></p>
 
 ### 爬虫入门教程源代码
  

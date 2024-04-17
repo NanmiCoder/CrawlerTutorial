@@ -69,7 +69,7 @@ def send_request(page_start: int, page_size: int) -> Dict[str, Any]:
 
     response = requests.post(url=req_url, params=common_params, json=common_payload_data, headers=headers)
     if response.status_code != 200:
-        raise Exception("发起请求是发生异常，请求发生错误，原因:", response.text)
+        raise Exception("发起请求时发生异常，请求发生错误，原因:", response.text)
     try:
         response_dict: Dict = response.json()
         return response_dict

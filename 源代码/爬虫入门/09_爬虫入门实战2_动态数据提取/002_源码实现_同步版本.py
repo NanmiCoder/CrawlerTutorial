@@ -118,7 +118,7 @@ def run_crawler(save_file_name: str) -> None:
     """
     # step1 获取最大数据总量
     max_total: int = get_max_total_count()
-    # step2 遍历每一夜数据并解析存储到数据容器中
+    # step2 遍历每一页数据并解析存储到数据容器中
     data_list: List[SymbolContent] = fetch_currency_data_list(max_total)
     # step3 将数据容器中的数据保存csv
     save_data_to_csv(save_file_name, data_list)

@@ -73,7 +73,7 @@ async def send_request(page_start: int, page_size: int) -> Dict[str, Any]:
         response = await client.post(url=req_url, params=common_params, json=common_payload_data, headers=headers,
                                      timeout=30)
     if response.status_code != 200:
-        raise Exception("发起请求是发生异常，请求发生错误，原因:", response.text)
+        raise Exception("发起请求时发生异常，请求发生错误，原因:", response.text)
     try:
         response_dict: Dict = response.json()
         return response_dict
@@ -123,7 +123,7 @@ async def run_crawler(save_file_name: str) -> None:
     """
     # step1 获取最大数据总量
     max_total: int = await get_max_total_count()
-    # step2 遍历每一夜数据并解析存储到数据容器中
+    # step2 遍历每一页数据并解析存储到数据容器中
     data_list: List[SymbolContent] = await fetch_currency_data_list(max_total)
     # step3 将数据容器中的数据保存csv
     await save_data_to_csv(save_file_name, data_list)

@@ -7,9 +7,8 @@
 from typing import List
 
 import httpx
-from parsel import Selector
-
 from common import NoteContent, NoteContentDetail, NotePushComment
+from parsel import Selector
 
 FIRST_N_PAGE = 10  # 前N页的论坛帖子数据
 BASE_HOST = "https://www.ptt.cc"

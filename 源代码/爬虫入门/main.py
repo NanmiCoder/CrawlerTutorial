@@ -3,8 +3,10 @@
 # @Time    : 2024/3/24 16:35
 # @Desc    :
 
-import httpx
 import asyncio
+
+import httpx
+
 
 async def post_data():
     data = {'name': '程序员阿江','email':'relakkes@gmail.com'}

@@ -1,0 +1,4 @@
+aiomysql==0.2.0
+aiofiles~=23.2.1
+httpx==0.24.0
+pydantic==2.7.3

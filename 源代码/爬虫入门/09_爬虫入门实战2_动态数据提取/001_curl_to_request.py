@@ -5,8 +5,9 @@
 # @Desc    : 下面代码是通过从chrom浏览器复制请求的curl命令转成python的代码，转换地址：https://hasdata.com/curl-to-python-converter
 # @Desc    : 今日的目标站点是雅虎财经的国外站点，他们已经关闭了中国大陆访问，所以需要开启全局VPN（科学上网工具）才能获得目标数据。
 
-import requests
 import pprint
+
+import requests
 
 cookies = {
     'GUC': 'AQEBCAFmDYVmOUIdcARM&s=AQAAANxlE2ny&g=Zgw0yA',

@@ -4,15 +4,14 @@
 # @Time    : 2024/4/7 17:08
 # @Desc    : https://finance.yahoo.com/crypto页面的加密货币表格数据
 # @Desc    : 下面的代码请挂全局的科学上网工具再跑
+import asyncio
 import csv
 import random
-import asyncio
 import time
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 import aiofiles
 import httpx
-
 from common import SymbolContent, make_req_params_and_headers
 
 HOST = "https://query1.finance.yahoo.com"

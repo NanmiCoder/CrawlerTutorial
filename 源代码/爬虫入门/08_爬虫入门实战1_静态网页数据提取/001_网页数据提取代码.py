@@ -4,9 +4,8 @@
 # @Time    : 2024/3/27 22:47
 # @Desc    : 分别使用两个库演示如何提取html文档结构数据
 from bs4 import BeautifulSoup
-from parsel import Selector
-
 from common import NoteContent
+from parsel import Selector
 
 
 def parse_html_use_bs(html_content: str):

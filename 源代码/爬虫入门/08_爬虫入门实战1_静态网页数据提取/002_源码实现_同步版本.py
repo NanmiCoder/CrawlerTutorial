@@ -8,7 +8,6 @@ from typing import List
 
 import requests
 from bs4 import BeautifulSoup
-
 from common import NoteContent, NoteContentDetail, NotePushComment
 
 FIRST_N_PAGE = 10  # 前N页的论坛帖子数据

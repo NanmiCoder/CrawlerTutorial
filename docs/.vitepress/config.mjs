@@ -2,6 +2,7 @@ import {defineConfig} from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    base: '/CrawlerTutorial/',
     title: "程序员阿江-Relakkes的爬虫教程",
     description: "程序员阿江-Relakkes的爬虫教程",
     lastUpdated: true,

@@ -6,10 +6,24 @@ export default defineConfig({
     title: "程序员阿江-Relakkes的爬虫教程",
     description: "程序员阿江-Relakkes的爬虫教程",
     lastUpdated: true,
+    head: [
+        [
+            'script',
+            {async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-B5H6D2HDGK'}
+        ],
+        [
+            'script',
+            {},
+            `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B5H6D2HDGK');`
+        ]
+    ],
     themeConfig: {
-           editLink: {
-               pattern: 'https://github.com/NanmiCoder/CrawlerTutorial/tree/main/docs/:path'
-           },
+        editLink: {
+            pattern: 'https://github.com/NanmiCoder/CrawlerTutorial/tree/main/docs/:path'
+        },
         search: {
             provider: 'local'
         },

@@ -30,8 +30,9 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: '首页', link: '/'},
-            {text: 'B站主页', link: 'https://space.bilibili.com/434377496'},
-            {text: '联系作者', link: 'https://github.com/NanmiCoder'},
+            {text: 'B站视频课程', link: 'https://space.bilibili.com/434377496/channel/collectiondetail?sid=4035213&ctype=0'},
+            {text: '联系作者', link: 'https://nanmicoder.github.io/MediaCrawler/%E4%BD%9C%E8%80%85%E4%BB%8B%E7%BB%8D.html'},
+            {text: '支持作者', link: 'https://nanmicoder.github.io/MediaCrawler/%E7%9F%A5%E8%AF%86%E4%BB%98%E8%B4%B9%E4%BB%8B%E7%BB%8D.html'},
         ],
 
         sidebar: [

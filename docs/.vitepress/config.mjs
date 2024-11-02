@@ -18,6 +18,10 @@ export default defineConfig({
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-B5H6D2HDGK');`
+        ],
+        [
+            'script',
+            {async: '', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5210914487984731', crossorigin: 'anonymous'},
         ]
     ],
     themeConfig: {

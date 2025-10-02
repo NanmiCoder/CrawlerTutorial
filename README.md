@@ -12,7 +12,7 @@
 对应的视频链接近期也会同步更新出来，[查看B站合集地址](https://space.bilibili.com/434377496/channel/collectiondetail?sid=4035213&ctype=0)
 
 ## 爬虫交流群
-可以加作者wx拉进群: yzglan，备注来自github爬虫教程.
+可以加作者wx拉进群: relakkes，备注来自github爬虫教程.
 
 
 ## 免责声明

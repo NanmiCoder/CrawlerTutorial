@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Desc: 词云生成工具
+from __future__ import annotations
 
 import os
 from typing import List, Dict, Tuple, Optional

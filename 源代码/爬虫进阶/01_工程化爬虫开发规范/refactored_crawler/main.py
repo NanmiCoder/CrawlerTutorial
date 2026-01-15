@@ -6,10 +6,10 @@ import json
 import os
 from loguru import logger
 
-from .logger import setup_logger
-from .config import settings
-from .crawler import BBSCrawler
-from .exceptions import CrawlerException
+from logger import setup_logger
+from config import settings
+from crawler import BBSCrawler
+from exceptions import CrawlerException
 
 
 async def main():

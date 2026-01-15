@@ -7,7 +7,7 @@ from typing import List
 from loguru import logger
 import httpx
 
-from .base import ProxyInfo, IProxyChecker
+from base import ProxyInfo, IProxyChecker
 
 
 class ProxyChecker(IProxyChecker):

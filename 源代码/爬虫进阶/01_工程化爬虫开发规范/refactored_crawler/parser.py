@@ -5,8 +5,8 @@ from typing import List, Optional
 from parsel import Selector
 from loguru import logger
 
-from .models import NoteItem, NoteDetail, PushComment
-from .exceptions import ParseException
+from models import NoteItem, NoteDetail, PushComment
+from exceptions import ParseException
 
 
 class BBSParser:
@@ -113,6 +113,18 @@ class BBSParser:
             )
             if time_el:
                 detail.publish_datetime = time_el.css("::text").get("").strip()
+
+            # 解析正文内容
+            # 获取 main-content 的全部文本，排除元信息和评论部分
+            main_content = selector.css("#main-content")
+            if main_content:
+                # 提取正文：获取所有文本节点，过滤掉元信息和评论
+                content_parts = []
+                for text_node in main_content.xpath("text()"):
+                    text = text_node.get().strip()
+                    if text and not text.startswith("--"):  # 排除签名分隔线
+                        content_parts.append(text)
+                detail.content = "\n".join(content_parts)
 
             # 解析评论
             comments = []

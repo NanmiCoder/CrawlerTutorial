@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Desc: HTTP 客户端封装
 
+from typing import Optional
+
 import httpx
 from loguru import logger
 from tenacity import (
@@ -10,8 +12,8 @@ from tenacity import (
     retry_if_exception_type
 )
 
-from .config import settings
-from .exceptions import RequestException, TimeoutException
+from config import settings
+from exceptions import RequestException, TimeoutException
 
 
 class CrawlerClient:
@@ -28,13 +30,13 @@ class CrawlerClient:
     DEFAULT_HEADERS = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                       "AppleWebKit/537.36 (KHTML, like Gecko) "
-                      "Chrome/123.0.0.0 Safari/537.36",
+                      "Chrome/131.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
     }
 
     def __init__(self):
-        self._client: httpx.AsyncClient | None = None
+        self._client: Optional[httpx.AsyncClient] = None
 
     async def __aenter__(self):
         await self.start()

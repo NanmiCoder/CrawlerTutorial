@@ -7,7 +7,7 @@ import time
 from typing import Optional, Dict, List
 from loguru import logger
 
-from .base import ProxyInfo, IProxyFetcher, IProxyChecker, IProxyPool
+from base import ProxyInfo, IProxyFetcher, IProxyChecker, IProxyPool
 
 
 class ProxyPool(IProxyPool):

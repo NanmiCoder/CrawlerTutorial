@@ -52,8 +52,8 @@ window.navigator.permissions.query = (parameters) => (
 if (navigator.userAgentData) {
     Object.defineProperty(navigator.userAgentData, 'brands', {
         get: () => [
-            { brand: 'Google Chrome', version: '120' },
-            { brand: 'Chromium', version: '120' },
+            { brand: 'Google Chrome', version: '131' },
+            { brand: 'Chromium', version: '131' },
             { brand: 'Not_A Brand', version: '8' }
         ]
     });
@@ -110,7 +110,7 @@ async def create_stealth_context(browser, stealth_js: str = None):
         user_agent=(
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
             'AppleWebKit/537.36 (KHTML, like Gecko) '
-            'Chrome/120.0.0.0 Safari/537.36'
+            'Chrome/131.0.0.0 Safari/537.36'
         ),
         locale='zh-CN',
         timezone_id='Asia/Shanghai',

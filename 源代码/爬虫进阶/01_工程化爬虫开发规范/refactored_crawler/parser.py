@@ -5,8 +5,8 @@ from typing import List, Optional
 from parsel import Selector
 from loguru import logger
 
-from models import NoteItem, NoteDetail, PushComment
-from exceptions import ParseException
+from .models import NoteItem, NoteDetail, PushComment
+from .exceptions import ParseException
 
 
 class BBSParser:

@@ -12,8 +12,8 @@ from tenacity import (
     retry_if_exception_type
 )
 
-from config import settings
-from exceptions import RequestException, TimeoutException
+from .config import settings
+from .exceptions import RequestException, TimeoutException
 
 
 class CrawlerClient:

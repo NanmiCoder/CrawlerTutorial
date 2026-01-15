@@ -5,11 +5,11 @@ import asyncio
 from typing import List
 from loguru import logger
 
-from config import settings
-from client import CrawlerClient
-from parser import BBSParser
-from models import NoteItem, NoteDetail, CrawlResult
-from exceptions import CrawlerException
+from .config import settings
+from .client import CrawlerClient
+from .parser import BBSParser
+from .models import NoteItem, NoteDetail, CrawlResult
+from .exceptions import CrawlerException
 
 
 class BBSCrawler:

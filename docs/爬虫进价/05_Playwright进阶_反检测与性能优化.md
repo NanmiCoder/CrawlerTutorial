@@ -492,15 +492,15 @@ class BrowserManager:
 
 ---
 
-## B站 Playwright 反检测实战
+## 反检测实战
 
-### B站的反自动化检测机制
+### 网站的反自动化检测机制
 
-B站作为大型视频平台，有较为完善的反自动化检测：
+大型网站通常有较为完善的反自动化检测：
 
 ```mermaid
 flowchart LR
-    subgraph B站检测机制
+    subgraph 检测机制
         Check1["WebDriver检测"]
         Check2["请求头验证"]
         Check3["行为分析"]
@@ -509,29 +509,29 @@ flowchart LR
 
     subgraph 检测结果
         Pass["正常访问"]
-        Block412["412风控"]
+        Block["触发风控"]
         Captcha["触发验证码"]
     end
 
     Check1 -->|通过| Check2
-    Check1 -->|失败| Block412
+    Check1 -->|失败| Block
     Check2 -->|通过| Check3
-    Check2 -->|异常| Block412
+    Check2 -->|异常| Block
     Check3 -->|正常| Pass
     Check3 -->|异常| Captcha
-    Check4 -->|超限| Block412
+    Check4 -->|超限| Block
 
     style Pass fill:#c8e6c9,stroke:#4caf50
-    style Block412 fill:#ffcdd2,stroke:#f44336
+    style Block fill:#ffcdd2,stroke:#f44336
     style Captcha fill:#fff3e0,stroke:#ff9800
 ```
 
-### B站完整反检测配置
+### 完整反检测配置
 
 ```python
 # -*- coding: utf-8 -*-
 """
-B站 Playwright 反检测配置
+Playwright 反检测配置
 """
 
 import asyncio
@@ -540,8 +540,8 @@ from loguru import logger
 from typing import Optional
 
 
-# B站专用 stealth 脚本
-BILIBILI_STEALTH_JS = """
+# 通用 stealth 脚本
+STEALTH_JS = """
 // 隐藏 webdriver 标志
 Object.defineProperty(navigator, 'webdriver', {
     get: () => undefined
@@ -612,9 +612,9 @@ delete window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol;
 """
 
 
-class BilibiliStealthBrowser:
+class StealthBrowser:
     """
-    B站反检测浏览器封装
+    反检测浏览器封装
 
     特性：
     - 自动注入 stealth 脚本
@@ -663,9 +663,9 @@ class BilibiliStealthBrowser:
         )
 
         # 注入 stealth 脚本
-        await self._context.add_init_script(BILIBILI_STEALTH_JS)
+        await self._context.add_init_script(STEALTH_JS)
 
-        logger.info("B站反检测浏览器已启动")
+        logger.info("反检测浏览器已启动")
         return self._context
 
     async def create_optimized_page(self) -> Page:
@@ -702,7 +702,7 @@ class BilibiliStealthBrowser:
                 viewport={"width": 1920, "height": 1080},
                 locale="zh-CN"
             )
-            await self._context.add_init_script(BILIBILI_STEALTH_JS)
+            await self._context.add_init_script(STEALTH_JS)
             logger.info(f"Cookie 已从 {path} 加载")
 
     async def stop(self):
@@ -716,17 +716,17 @@ class BilibiliStealthBrowser:
         logger.info("浏览器已关闭")
 
 
-async def test_bilibili_stealth():
-    """测试B站反检测效果"""
-    browser = BilibiliStealthBrowser(headless=True)
+async def test_stealth_browser():
+    """测试反检测效果（使用 bot.sannysoft.com）"""
+    browser = StealthBrowser(headless=True)
     context = await browser.start()
 
     try:
         page = await browser.create_optimized_page()
 
-        # 访问B站首页
-        logger.info("访问B站首页...")
-        await page.goto("https://www.bilibili.com", wait_until="networkidle")
+        # 访问 WebDriver 检测网站
+        logger.info("访问 bot.sannysoft.com 测试反检测效果...")
+        await page.goto("https://bot.sannysoft.com/", wait_until="networkidle")
 
         # 检查反检测效果
         webdriver = await page.evaluate("navigator.webdriver")
@@ -738,29 +738,24 @@ async def test_bilibili_stealth():
         logger.info(f"  - window.chrome 存在: {chrome}")
         logger.info(f"  - plugins 数量: {plugins}")
 
-        # 等待视频卡片加载
-        await page.wait_for_selector(".bili-video-card", timeout=10000)
-        cards = await page.locator(".bili-video-card").count()
-        logger.info(f"成功加载 {cards} 个视频卡片")
-
-        # 截图
-        await page.screenshot(path="bilibili_stealth_test.png")
-        logger.info("截图已保存")
+        # 截图保存测试结果
+        await page.screenshot(path="stealth_test.png", full_page=True)
+        logger.info("截图已保存到 stealth_test.png")
 
     finally:
         await browser.stop()
 
 
 if __name__ == "__main__":
-    asyncio.run(test_bilibili_stealth())
+    asyncio.run(test_stealth_browser())
 ```
 
-### B站性能优化配置
+### 性能优化爬虫配置
 
 ```python
 # -*- coding: utf-8 -*-
 """
-B站 Playwright 性能优化配置
+Playwright 性能优化配置
 """
 
 import asyncio
@@ -769,9 +764,9 @@ from loguru import logger
 from typing import Set
 
 
-class BilibiliOptimizedCrawler:
+class OptimizedCrawler:
     """
-    B站性能优化爬虫
+    性能优化爬虫
 
     优化策略：
     - 禁用图片/字体/CSS加载
@@ -790,9 +785,9 @@ class BilibiliOptimizedCrawler:
 
     # 需要阻止的URL模式
     BLOCKED_URL_PATTERNS = [
-        "**/cm.bilibili.com/**",      # 广告
-        "**/api.bilibili.com/x/web-show/**",  # 广告
-        "**/s1.hdslb.com/bfs/seed/**",  # 追踪
+        "**/analytics**",
+        "**/tracking**",
+        "**/ads**",
         "**/*.gif",
         "**/*.png",
         "**/*.jpg",
@@ -816,7 +811,7 @@ class BilibiliOptimizedCrawler:
 
         # 检查URL模式（广告和追踪）
         url = request.url
-        for pattern in ["cm.bilibili.com", "web-show", "tracking"]:
+        for pattern in ["analytics", "tracking", "ads"]:
             if pattern in url:
                 await route.abort()
                 return
@@ -842,55 +837,34 @@ class BilibiliOptimizedCrawler:
 
         logger.info("性能优化浏览器已启动")
 
-    async def crawl_video_page(self, bvid: str) -> dict:
+    async def crawl_page(self, url: str) -> dict:
         """
-        爬取视频详情页
+        爬取页面
 
         Args:
-            bvid: 视频BV号
+            url: 目标URL
 
         Returns:
-            视频信息
+            页面信息
         """
         page = await self._context.new_page()
 
         try:
-            url = f"https://www.bilibili.com/video/{bvid}"
-            logger.info(f"爬取视频: {bvid}")
+            logger.info(f"爬取页面: {url}")
 
             # 访问页面
             await page.goto(url, wait_until="domcontentloaded")
 
-            # 等待标题加载
-            await page.wait_for_selector("h1.video-title", timeout=10000)
+            # 获取页面标题
+            title = await page.title()
 
-            # 提取信息
-            title = await page.locator("h1.video-title").text_content()
-
-            # 尝试获取播放量
-            view_count = "0"
-            try:
-                view_el = page.locator(".view-text")
-                if await view_el.count() > 0:
-                    view_count = await view_el.text_content()
-            except Exception:
-                pass
-
-            # 尝试获取UP主
-            author = ""
-            try:
-                author_el = page.locator(".up-name")
-                if await author_el.count() > 0:
-                    author = await author_el.text_content()
-            except Exception:
-                pass
+            # 获取页面内容
+            content = await page.content()
 
             return {
-                "bvid": bvid,
+                "url": url,
                 "title": title.strip() if title else "",
-                "view_count": view_count.strip() if view_count else "0",
-                "author": author.strip() if author else "",
-                "url": url
+                "content_length": len(content)
             }
 
         finally:
@@ -910,21 +884,25 @@ async def benchmark_optimization():
     """性能对比测试"""
     import time
 
-    # 测试BV号列表
-    bvids = ["BV1GJ411x7h7", "BV1uT4y1P7CX", "BV1Ys411c7xT"]
+    # 测试URL列表
+    urls = [
+        "https://quotes.toscrape.com/",
+        "https://quotes.toscrape.com/page/2/",
+        "https://quotes.toscrape.com/page/3/",
+    ]
 
-    crawler = BilibiliOptimizedCrawler(headless=True)
+    crawler = OptimizedCrawler(headless=True)
     await crawler.start()
 
     try:
         start = time.time()
 
-        for bvid in bvids:
-            result = await crawler.crawl_video_page(bvid)
-            logger.info(f"视频: {result['title'][:30]}... | 播放: {result['view_count']}")
+        for url in urls:
+            result = await crawler.crawl_page(url)
+            logger.info(f"页面: {result['title']} | 大小: {result['content_length']} bytes")
 
         elapsed = time.time() - start
-        logger.info(f"总耗时: {elapsed:.2f}s | 平均: {elapsed/len(bvids):.2f}s/页")
+        logger.info(f"总耗时: {elapsed:.2f}s | 平均: {elapsed/len(urls):.2f}s/页")
 
     finally:
         await crawler.stop()
@@ -939,7 +917,7 @@ if __name__ == "__main__":
 ```mermaid
 flowchart LR
     Start["启动浏览器"] --> Inject["注入stealth.js"]
-    Inject --> Visit["访问B站"]
+    Inject --> Visit["访问测试网站"]
     Visit --> Check{"检测验证"}
 
     Check -->|webdriver=undefined| Pass1["✓ 通过"]
@@ -964,52 +942,7 @@ flowchart LR
 3. **CDP 模式**：直接使用 Chrome DevTools Protocol
 4. **性能优化**：禁用资源加载、上下文复用、并发管理
 5. **异常处理**：页面崩溃恢复、资源清理
-6. **B站实战**：专用反检测配置、性能优化爬虫
-
----
-
-## 与第11章实战项目的关联
-
-本章反检测与性能优化技术在第11章 B站综合实战项目中有核心应用：
-
-| 本章内容 | 第11章对应实现 | 文件位置 |
-|---------|--------------|---------|
-| stealth.js 配置 | 浏览器初始化脚本 | `tools/stealth.min.js` |
-| 反检测浏览器类 | BrowserManager | `tools/browser_manager.py` |
-| 性能优化配置 | 资源拦截规则 | `config/bilibili_config.py` |
-| Cookie 管理 | 登录态保持 | `login/auth.py` |
-
-```mermaid
-graph LR
-    subgraph 本章知识点
-        A1["stealth.js"]
-        A2["反检测配置"]
-        A3["性能优化"]
-    end
-
-    subgraph 第11章实战应用
-        B1["扫码登录"]
-        B2["数据采集"]
-        B3["批量爬取"]
-    end
-
-    A1 --> B1
-    A2 --> B2
-    A3 --> B3
-
-    style A1 fill:#e3f2fd,stroke:#2196f3
-    style A2 fill:#e3f2fd,stroke:#2196f3
-    style A3 fill:#e3f2fd,stroke:#2196f3
-    style B1 fill:#c8e6c9,stroke:#4caf50
-    style B2 fill:#c8e6c9,stroke:#4caf50
-    style B3 fill:#c8e6c9,stroke:#4caf50
-```
-
-**学习建议**：
-
-1. 本章的 `BILIBILI_STEALTH_JS` 脚本是第11章浏览器自动化的基础
-2. 资源拦截策略直接影响爬虫性能
-3. 建议结合第11章 `tools/browser_manager.py` 学习完整实现
+6. **实战演练**：反检测配置、性能优化爬虫
 
 ---
 

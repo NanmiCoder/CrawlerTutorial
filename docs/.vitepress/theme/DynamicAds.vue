@@ -11,9 +11,9 @@ const fetchAds = async () => {
   return [
     {
       id: 1,
-      imageUrl: 'https://nm.zizhi1.com/static/img/40097e36a617f58db1dd132b5841cb1e.ad_pla1.webp',
-      landingUrl: 'https://nanmicoder.github.io/MediaCrawler/%E4%BD%9C%E8%80%85%E4%BB%8B%E7%BB%8D.html',
-      text: '⚡️【广告位招租】⚡️投放广告请联系微信:yzglan'
+      imageUrl: 'https://github.com/NanmiCoder/MediaCrawler/raw/main/docs/static/images/MediaCrawlerPro.jpg',
+      landingUrl: 'https://github.com/MediaCrawlerPro',
+      text: '👏欢迎大家来订阅MediaCrawlerPro源代码'
     }
   ]
 }
@@ -63,7 +63,8 @@ onUnmounted(() => {
 }
 
 .ad-image {
-  max-width: 130px;
+  max-width: 100%;
+  width: 280px;
   height: auto;
   margin-bottom: 0.5rem;
 }

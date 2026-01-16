@@ -1,7 +1,8 @@
 import {defineConfig} from 'vitepress'
+import {withMermaid} from 'vitepress-plugin-mermaid'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid(defineConfig({
     base: '/CrawlerTutorial/',
     title: "程序员阿江-Relakkes的爬虫教程",
     description: "程序员阿江-Relakkes的爬虫教程",
@@ -63,6 +64,23 @@ export default defineConfig({
                         link: '/爬虫入门/12_爬虫入门实战5_编写易于维护的爬虫代码'
                     }
                 ]
+            },
+            {
+                text: 'Python爬虫进阶',
+                collapsed: false,
+                items: [
+                    {text: '01_工程化爬虫开发规范', link: '/爬虫进价/01_工程化爬虫开发规范'},
+                    {text: '02_反爬虫对抗基础_请求伪装', link: '/爬虫进价/02_反爬虫对抗基础_请求伪装'},
+                    {text: '03_代理IP的使用与管理', link: '/爬虫进价/03_代理IP的使用与管理'},
+                    {text: '04_Playwright浏览器自动化入门', link: '/爬虫进价/04_Playwright浏览器自动化入门'},
+                    {text: '05_Playwright进阶_反检测与性能优化', link: '/爬虫进价/05_Playwright进阶_反检测与性能优化'},
+                    {text: '06_登录认证_Cookie与Session管理', link: '/爬虫进价/06_登录认证_Cookie与Session管理'},
+                    {text: '07_登录认证_扫码与短信登录实现', link: '/爬虫进价/07_登录认证_扫码与短信登录实现'},
+                    {text: '08_验证码识别与处理', link: '/爬虫进价/08_验证码识别与处理'},
+                    {text: '09_数据清洗与预处理', link: '/爬虫进价/09_数据清洗与预处理'},
+                    {text: '10_数据分析与可视化', link: '/爬虫进价/10_数据分析与可视化'},
+                    {text: '11_进阶综合实战项目', link: '/爬虫进价/11_进阶综合实战项目'}
+                ]
             }
         ],
 
@@ -71,4 +89,4 @@ export default defineConfig({
         ]
     },
 
-})
+}))

@@ -10,6 +10,41 @@
 
 ### 自动化浏览器的检测点
 
+```mermaid
+flowchart TD
+    subgraph 检测层级
+        L1["Level 1: 基础检测"]
+        L2["Level 2: 特征检测"]
+        L3["Level 3: 行为检测"]
+    end
+
+    subgraph 基础检测项
+        D1["navigator.webdriver"]
+        D2["window.chrome"]
+        D3["navigator.plugins"]
+    end
+
+    subgraph 特征检测项
+        D4["Canvas指纹"]
+        D5["WebGL指纹"]
+        D6["Audio指纹"]
+    end
+
+    subgraph 行为检测项
+        D7["鼠标轨迹"]
+        D8["键盘节奏"]
+        D9["页面停留"]
+    end
+
+    L1 --> D1 & D2 & D3
+    L2 --> D4 & D5 & D6
+    L3 --> D7 & D8 & D9
+
+    style L1 fill:#e8f5e9,stroke:#4caf50
+    style L2 fill:#fff3e0,stroke:#ff9800
+    style L3 fill:#ffebee,stroke:#f44336
+```
+
 | 检测类型 | 检测方法 | 说明 |
 |---------|---------|------|
 | WebDriver 标志 | `navigator.webdriver` | Playwright 默认为 true |
@@ -457,66 +492,465 @@ class BrowserManager:
 
 ---
 
-## 实战案例
+## B站 Playwright 反检测实战
+
+### B站的反自动化检测机制
+
+B站作为大型视频平台，有较为完善的反自动化检测：
+
+```mermaid
+flowchart LR
+    subgraph B站检测机制
+        Check1["WebDriver检测"]
+        Check2["请求头验证"]
+        Check3["行为分析"]
+        Check4["频率限制"]
+    end
+
+    subgraph 检测结果
+        Pass["正常访问"]
+        Block412["412风控"]
+        Captcha["触发验证码"]
+    end
+
+    Check1 -->|通过| Check2
+    Check1 -->|失败| Block412
+    Check2 -->|通过| Check3
+    Check2 -->|异常| Block412
+    Check3 -->|正常| Pass
+    Check3 -->|异常| Captcha
+    Check4 -->|超限| Block412
+
+    style Pass fill:#c8e6c9,stroke:#4caf50
+    style Block412 fill:#ffcdd2,stroke:#f44336
+    style Captcha fill:#fff3e0,stroke:#ff9800
+```
+
+### B站完整反检测配置
 
 ```python
 # -*- coding: utf-8 -*-
 """
-Playwright 反检测与性能优化实战示例
+B站 Playwright 反检测配置
 """
 
 import asyncio
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, Browser, BrowserContext, Page
 from loguru import logger
+from typing import Optional
 
 
-# 简化版 stealth 脚本
-STEALTH_JS = """
-Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-window.chrome = { runtime: {} };
-Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
-Object.defineProperty(navigator, 'languages', { get: () => ['zh-CN', 'zh', 'en'] });
+# B站专用 stealth 脚本
+BILIBILI_STEALTH_JS = """
+// 隐藏 webdriver 标志
+Object.defineProperty(navigator, 'webdriver', {
+    get: () => undefined
+});
+
+// 模拟 Chrome 对象
+window.chrome = {
+    runtime: {},
+    loadTimes: function() {},
+    csi: function() {},
+    app: {}
+};
+
+// 模拟正常的插件列表
+Object.defineProperty(navigator, 'plugins', {
+    get: () => {
+        const plugins = [
+            {
+                name: 'Chrome PDF Plugin',
+                description: 'Portable Document Format',
+                filename: 'internal-pdf-viewer'
+            },
+            {
+                name: 'Chrome PDF Viewer',
+                description: '',
+                filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai'
+            },
+            {
+                name: 'Native Client',
+                description: '',
+                filename: 'internal-nacl-plugin'
+            }
+        ];
+        plugins.item = (i) => plugins[i];
+        plugins.namedItem = (name) => plugins.find(p => p.name === name);
+        plugins.refresh = () => {};
+        return plugins;
+    }
+});
+
+// 模拟语言设置
+Object.defineProperty(navigator, 'languages', {
+    get: () => ['zh-CN', 'zh', 'en-US', 'en']
+});
+
+// 修复 permissions API
+const originalQuery = window.navigator.permissions.query;
+window.navigator.permissions.query = (parameters) => (
+    parameters.name === 'notifications'
+        ? Promise.resolve({ state: Notification.permission })
+        : originalQuery(parameters)
+);
+
+// 模拟硬件并发数
+Object.defineProperty(navigator, 'hardwareConcurrency', {
+    get: () => 8
+});
+
+// 模拟设备内存
+Object.defineProperty(navigator, 'deviceMemory', {
+    get: () => 8
+});
+
+// 隐藏自动化相关属性
+delete window.cdc_adoQpoasnfa76pfcZLmcfl_Array;
+delete window.cdc_adoQpoasnfa76pfcZLmcfl_Promise;
+delete window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol;
 """
 
 
-async def main():
-    async with async_playwright() as p:
-        # 启动浏览器
-        browser = await p.chromium.launch(headless=True)
+class BilibiliStealthBrowser:
+    """
+    B站反检测浏览器封装
 
-        # 创建带反检测的上下文
-        context = await browser.new_context(
+    特性：
+    - 自动注入 stealth 脚本
+    - 模拟真实浏览器环境
+    - 支持资源优化
+    - Cookie 管理
+    """
+
+    def __init__(self, headless: bool = True):
+        self.headless = headless
+        self._playwright = None
+        self._browser: Optional[Browser] = None
+        self._context: Optional[BrowserContext] = None
+
+    async def start(self) -> BrowserContext:
+        """启动浏览器并创建反检测上下文"""
+        from playwright.async_api import async_playwright
+
+        self._playwright = await async_playwright().start()
+
+        # 启动浏览器，添加反检测参数
+        self._browser = await self._playwright.chromium.launch(
+            headless=self.headless,
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-infobars",
+                "--window-size=1920,1080",
+                "--start-maximized",
+            ]
+        )
+
+        # 创建上下文
+        self._context = await self._browser.new_context(
             viewport={"width": 1920, "height": 1080},
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            locale="zh-CN",
+            timezone_id="Asia/Shanghai",
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/131.0.0.0 Safari/537.36",
+            extra_http_headers={
+                "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+            }
         )
 
         # 注入 stealth 脚本
-        await context.add_init_script(STEALTH_JS)
+        await self._context.add_init_script(BILIBILI_STEALTH_JS)
+
+        logger.info("B站反检测浏览器已启动")
+        return self._context
+
+    async def create_optimized_page(self) -> Page:
+        """创建性能优化的页面"""
+        if not self._context:
+            raise RuntimeError("浏览器未启动，请先调用 start()")
+
+        page = await self._context.new_page()
 
         # 禁用不必要的资源
-        await context.route("**/*.{png,jpg,jpeg,gif,svg}", lambda r: r.abort())
+        await page.route("**/*.{png,jpg,jpeg,gif,webp,svg,ico}", lambda r: r.abort())
+        await page.route("**/*.{woff,woff2,ttf,otf,eot}", lambda r: r.abort())
+        await page.route("**/analytics**", lambda r: r.abort())
+        await page.route("**/tracking**", lambda r: r.abort())
 
-        page = await context.new_page()
+        return page
 
-        try:
-            # 访问测试页面
-            logger.info("测试反检测效果...")
-            await page.goto("https://bot.sannysoft.com/", wait_until="networkidle")
+    async def save_cookies(self, path: str):
+        """保存 Cookie 到文件"""
+        if self._context:
+            await self._context.storage_state(path=path)
+            logger.info(f"Cookie 已保存到: {path}")
 
-            # 截图保存结果
-            await page.screenshot(path="anti_detect_test.png", full_page=True)
-            logger.info("截图已保存: anti_detect_test.png")
+    async def load_cookies(self, path: str):
+        """从文件加载 Cookie"""
+        import os
+        if os.path.exists(path):
+            # 需要重新创建 context
+            if self._context:
+                await self._context.close()
 
-            # 检查 webdriver 标志
-            webdriver = await page.evaluate("navigator.webdriver")
-            logger.info(f"navigator.webdriver = {webdriver}")
+            self._context = await self._browser.new_context(
+                storage_state=path,
+                viewport={"width": 1920, "height": 1080},
+                locale="zh-CN"
+            )
+            await self._context.add_init_script(BILIBILI_STEALTH_JS)
+            logger.info(f"Cookie 已从 {path} 加载")
 
-        finally:
-            await browser.close()
+    async def stop(self):
+        """关闭浏览器"""
+        if self._context:
+            await self._context.close()
+        if self._browser:
+            await self._browser.close()
+        if self._playwright:
+            await self._playwright.stop()
+        logger.info("浏览器已关闭")
+
+
+async def test_bilibili_stealth():
+    """测试B站反检测效果"""
+    browser = BilibiliStealthBrowser(headless=True)
+    context = await browser.start()
+
+    try:
+        page = await browser.create_optimized_page()
+
+        # 访问B站首页
+        logger.info("访问B站首页...")
+        await page.goto("https://www.bilibili.com", wait_until="networkidle")
+
+        # 检查反检测效果
+        webdriver = await page.evaluate("navigator.webdriver")
+        chrome = await page.evaluate("!!window.chrome")
+        plugins = await page.evaluate("navigator.plugins.length")
+
+        logger.info(f"反检测检查:")
+        logger.info(f"  - navigator.webdriver: {webdriver}")
+        logger.info(f"  - window.chrome 存在: {chrome}")
+        logger.info(f"  - plugins 数量: {plugins}")
+
+        # 等待视频卡片加载
+        await page.wait_for_selector(".bili-video-card", timeout=10000)
+        cards = await page.locator(".bili-video-card").count()
+        logger.info(f"成功加载 {cards} 个视频卡片")
+
+        # 截图
+        await page.screenshot(path="bilibili_stealth_test.png")
+        logger.info("截图已保存")
+
+    finally:
+        await browser.stop()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(test_bilibili_stealth())
+```
+
+### B站性能优化配置
+
+```python
+# -*- coding: utf-8 -*-
+"""
+B站 Playwright 性能优化配置
+"""
+
+import asyncio
+from playwright.async_api import async_playwright, Route
+from loguru import logger
+from typing import Set
+
+
+class BilibiliOptimizedCrawler:
+    """
+    B站性能优化爬虫
+
+    优化策略：
+    - 禁用图片/字体/CSS加载
+    - 拦截广告和追踪脚本
+    - 复用浏览器上下文
+    - 智能等待策略
+    """
+
+    # 需要阻止的资源类型
+    BLOCKED_RESOURCE_TYPES: Set[str] = {
+        "image",
+        "font",
+        "stylesheet",
+        "media",
+    }
+
+    # 需要阻止的URL模式
+    BLOCKED_URL_PATTERNS = [
+        "**/cm.bilibili.com/**",      # 广告
+        "**/api.bilibili.com/x/web-show/**",  # 广告
+        "**/s1.hdslb.com/bfs/seed/**",  # 追踪
+        "**/*.gif",
+        "**/*.png",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.webp",
+    ]
+
+    def __init__(self, headless: bool = True):
+        self.headless = headless
+        self._browser = None
+        self._context = None
+
+    async def _route_handler(self, route: Route):
+        """路由处理器 - 决定是否阻止请求"""
+        request = route.request
+
+        # 检查资源类型
+        if request.resource_type in self.BLOCKED_RESOURCE_TYPES:
+            await route.abort()
+            return
+
+        # 检查URL模式（广告和追踪）
+        url = request.url
+        for pattern in ["cm.bilibili.com", "web-show", "tracking"]:
+            if pattern in url:
+                await route.abort()
+                return
+
+        await route.continue_()
+
+    async def start(self):
+        """启动优化后的浏览器"""
+        self._playwright = await async_playwright().start()
+
+        self._browser = await self._playwright.chromium.launch(
+            headless=self.headless,
+            args=["--disable-blink-features=AutomationControlled"]
+        )
+
+        self._context = await self._browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            locale="zh-CN"
+        )
+
+        # 设置路由拦截
+        await self._context.route("**/*", self._route_handler)
+
+        logger.info("性能优化浏览器已启动")
+
+    async def crawl_video_page(self, bvid: str) -> dict:
+        """
+        爬取视频详情页
+
+        Args:
+            bvid: 视频BV号
+
+        Returns:
+            视频信息
+        """
+        page = await self._context.new_page()
+
+        try:
+            url = f"https://www.bilibili.com/video/{bvid}"
+            logger.info(f"爬取视频: {bvid}")
+
+            # 访问页面
+            await page.goto(url, wait_until="domcontentloaded")
+
+            # 等待标题加载
+            await page.wait_for_selector("h1.video-title", timeout=10000)
+
+            # 提取信息
+            title = await page.locator("h1.video-title").text_content()
+
+            # 尝试获取播放量
+            view_count = "0"
+            try:
+                view_el = page.locator(".view-text")
+                if await view_el.count() > 0:
+                    view_count = await view_el.text_content()
+            except Exception:
+                pass
+
+            # 尝试获取UP主
+            author = ""
+            try:
+                author_el = page.locator(".up-name")
+                if await author_el.count() > 0:
+                    author = await author_el.text_content()
+            except Exception:
+                pass
+
+            return {
+                "bvid": bvid,
+                "title": title.strip() if title else "",
+                "view_count": view_count.strip() if view_count else "0",
+                "author": author.strip() if author else "",
+                "url": url
+            }
+
+        finally:
+            await page.close()
+
+    async def stop(self):
+        """关闭浏览器"""
+        if self._context:
+            await self._context.close()
+        if self._browser:
+            await self._browser.close()
+        if self._playwright:
+            await self._playwright.stop()
+
+
+async def benchmark_optimization():
+    """性能对比测试"""
+    import time
+
+    # 测试BV号列表
+    bvids = ["BV1GJ411x7h7", "BV1uT4y1P7CX", "BV1Ys411c7xT"]
+
+    crawler = BilibiliOptimizedCrawler(headless=True)
+    await crawler.start()
+
+    try:
+        start = time.time()
+
+        for bvid in bvids:
+            result = await crawler.crawl_video_page(bvid)
+            logger.info(f"视频: {result['title'][:30]}... | 播放: {result['view_count']}")
+
+        elapsed = time.time() - start
+        logger.info(f"总耗时: {elapsed:.2f}s | 平均: {elapsed/len(bvids):.2f}s/页")
+
+    finally:
+        await crawler.stop()
+
+
+if __name__ == "__main__":
+    asyncio.run(benchmark_optimization())
+```
+
+### 反检测效果验证流程
+
+```mermaid
+flowchart LR
+    Start["启动浏览器"] --> Inject["注入stealth.js"]
+    Inject --> Visit["访问B站"]
+    Visit --> Check{"检测验证"}
+
+    Check -->|webdriver=undefined| Pass1["✓ 通过"]
+    Check -->|chrome存在| Pass2["✓ 通过"]
+    Check -->|plugins正常| Pass3["✓ 通过"]
+
+    Pass1 & Pass2 & Pass3 --> Result["反检测成功"]
+    Result --> Crawl["正常爬取"]
+
+    style Result fill:#c8e6c9,stroke:#4caf50
+    style Crawl fill:#e3f2fd,stroke:#2196f3
 ```
 
 ---
@@ -530,6 +964,52 @@ if __name__ == "__main__":
 3. **CDP 模式**：直接使用 Chrome DevTools Protocol
 4. **性能优化**：禁用资源加载、上下文复用、并发管理
 5. **异常处理**：页面崩溃恢复、资源清理
+6. **B站实战**：专用反检测配置、性能优化爬虫
+
+---
+
+## 与第11章实战项目的关联
+
+本章反检测与性能优化技术在第11章 B站综合实战项目中有核心应用：
+
+| 本章内容 | 第11章对应实现 | 文件位置 |
+|---------|--------------|---------|
+| stealth.js 配置 | 浏览器初始化脚本 | `tools/stealth.min.js` |
+| 反检测浏览器类 | BrowserManager | `tools/browser_manager.py` |
+| 性能优化配置 | 资源拦截规则 | `config/bilibili_config.py` |
+| Cookie 管理 | 登录态保持 | `login/auth.py` |
+
+```mermaid
+graph LR
+    subgraph 本章知识点
+        A1["stealth.js"]
+        A2["反检测配置"]
+        A3["性能优化"]
+    end
+
+    subgraph 第11章实战应用
+        B1["扫码登录"]
+        B2["数据采集"]
+        B3["批量爬取"]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B3
+
+    style A1 fill:#e3f2fd,stroke:#2196f3
+    style A2 fill:#e3f2fd,stroke:#2196f3
+    style A3 fill:#e3f2fd,stroke:#2196f3
+    style B1 fill:#c8e6c9,stroke:#4caf50
+    style B2 fill:#c8e6c9,stroke:#4caf50
+    style B3 fill:#c8e6c9,stroke:#4caf50
+```
+
+**学习建议**：
+
+1. 本章的 `BILIBILI_STEALTH_JS` 脚本是第11章浏览器自动化的基础
+2. 资源拦截策略直接影响爬虫性能
+3. 建议结合第11章 `tools/browser_manager.py` 学习完整实现
 
 ---
 

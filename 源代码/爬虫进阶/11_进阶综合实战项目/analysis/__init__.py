@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
-from .report import DataAnalyzer, ReportGenerator
+"""数据分析模块"""
+from .report import DataAnalyzer, BilibiliAnalyzer, ReportGenerator, generate_report
 
-__all__ = ['DataAnalyzer', 'ReportGenerator']
+__all__ = ['DataAnalyzer', 'BilibiliAnalyzer', 'ReportGenerator', 'generate_report']

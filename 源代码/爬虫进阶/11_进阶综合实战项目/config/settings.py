@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
-# @Desc: 项目配置
+"""
+项目配置模块
 
-from typing import Optional
+本模块定义了 B站爬虫项目的所有配置项，包括：
+- 基础配置（应用名称、调试模式）
+- 浏览器配置（无头模式、超时时间）
+- 登录配置（登录方式、Cookie文件）
+- 代理配置（是否启用、API地址）
+- 爬虫配置（最大页数、延迟时间）
+- 存储配置（存储类型、输出目录）
+"""
+
+from typing import Optional, List
 from enum import Enum
 
 # 尝试导入 pydantic-settings，如果不存在则使用简单的配置类
@@ -14,16 +24,21 @@ except ImportError:
 
 
 class StorageType(str, Enum):
-    """存储类型"""
+    """存储类型枚举"""
     JSON = "json"
     CSV = "csv"
-    DB = "db"
 
 
 class LoginType(str, Enum):
-    """登录类型"""
+    """登录类型枚举"""
     COOKIE = "cookie"
     QRCODE = "qrcode"
+
+
+class CrawlerType(str, Enum):
+    """爬虫类型枚举"""
+    SEARCH = "search"    # 关键词搜索
+    DETAIL = "detail"    # 指定视频详情
 
 
 if HAS_PYDANTIC_SETTINGS:
@@ -31,79 +46,75 @@ if HAS_PYDANTIC_SETTINGS:
         """项目配置（使用 pydantic-settings）"""
 
         # 基础配置
-        app_name: str = "SocialCrawler"
+        app_name: str = "BilibiliCrawler"
         debug: bool = False
 
         # 浏览器配置
-        browser_headless: bool = True
+        browser_headless: bool = False  # B站扫码登录需要显示浏览器
         browser_timeout: int = 30000
-        browser_user_data_dir: Optional[str] = None
+        browser_user_data_dir: Optional[str] = "browser_data/bili_user_data"
 
         # 登录配置
-        login_type: LoginType = LoginType.COOKIE
-        cookie_file: str = "cookies.json"
+        login_type: LoginType = LoginType.QRCODE
+        cookie_str: str = ""  # Cookie 字符串，当 login_type=cookie 时使用
+        save_login_state: bool = True  # 是否保存登录状态
 
         # 代理配置
         proxy_enabled: bool = False
         proxy_api_url: Optional[str] = None
 
-        # 爬虫配置
-        crawl_max_pages: int = 10
+        # B站爬虫配置
+        crawler_type: CrawlerType = CrawlerType.SEARCH
+        keywords: str = "Python教程"  # 搜索关键词，多个用逗号分隔
+        specified_id_list: List[str] = []  # 指定视频列表（BV号）
+        max_video_count: int = 20  # 最大爬取视频数量
         crawl_delay_min: float = 1.0
         crawl_delay_max: float = 3.0
+        max_concurrency: int = 3  # 最大并发数
 
         # 存储配置
         storage_type: StorageType = StorageType.JSON
         storage_output_dir: str = "./output"
 
-        # 数据库配置（可选）
-        db_host: str = "localhost"
-        db_port: int = 3306
-        db_user: str = "root"
-        db_password: str = ""
-        db_name: str = "crawler"
-
         class Config:
             env_file = ".env"
-            env_prefix = "CRAWLER_"
+            env_prefix = "BILI_"
 
 else:
     class Settings:
-        """项目配置（简单实现）"""
+        """项目配置（简单实现，无 pydantic-settings 依赖）"""
 
         def __init__(self):
             # 基础配置
-            self.app_name = "SocialCrawler"
+            self.app_name = "BilibiliCrawler"
             self.debug = False
 
             # 浏览器配置
-            self.browser_headless = True
+            self.browser_headless = False  # B站扫码登录需要显示浏览器
             self.browser_timeout = 30000
-            self.browser_user_data_dir = None
+            self.browser_user_data_dir = "browser_data/bili_user_data"
 
             # 登录配置
-            self.login_type = LoginType.COOKIE
-            self.cookie_file = "cookies.json"
+            self.login_type = LoginType.QRCODE
+            self.cookie_str = ""  # Cookie 字符串
+            self.save_login_state = True
 
             # 代理配置
             self.proxy_enabled = False
             self.proxy_api_url = None
 
-            # 爬虫配置
-            self.crawl_max_pages = 10
+            # B站爬虫配置
+            self.crawler_type = CrawlerType.SEARCH
+            self.keywords = "Python教程"
+            self.specified_id_list = []
+            self.max_video_count = 20
             self.crawl_delay_min = 1.0
             self.crawl_delay_max = 3.0
+            self.max_concurrency = 3
 
             # 存储配置
             self.storage_type = StorageType.JSON
             self.storage_output_dir = "./output"
-
-            # 数据库配置
-            self.db_host = "localhost"
-            self.db_port = 3306
-            self.db_user = "root"
-            self.db_password = ""
-            self.db_name = "crawler"
 
 
 # 全局配置实例

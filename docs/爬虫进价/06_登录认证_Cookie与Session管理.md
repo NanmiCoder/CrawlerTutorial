@@ -8,15 +8,18 @@
 
 Cookie 是服务器发送给浏览器的小型数据片段，浏览器会保存并在后续请求中自动携带。
 
-```
-客户端                                 服务器
-   |                                    |
-   |  -------- HTTP 请求 -------->      |
-   |                                    |
-   |  <--- Set-Cookie: session=xxx ---  |  (服务器设置 Cookie)
-   |                                    |
-   |  --- Cookie: session=xxx --->      |  (浏览器自动携带)
-   |                                    |
+```mermaid
+sequenceDiagram
+    participant Client as 客户端
+    participant Server as 服务器
+
+    Client->>Server: HTTP 请求 (首次访问)
+    Server-->>Client: Set-Cookie: session=xxx
+    Note over Client: 保存 Cookie 到本地
+
+    Client->>Server: HTTP 请求 + Cookie: session=xxx
+    Server-->>Client: 返回用户数据
+    Note over Server: 识别用户身份
 ```
 
 ### 1.2 Cookie 属性详解
@@ -674,7 +677,393 @@ class CookieManager:
             logger.error(f"Cookie 刷新失败: {e}")
 ```
 
-## 五、实战：完整的登录会话管理
+## 五、B站 Cookie 管理实战
+
+### 5.1 B站 Cookie 结构分析
+
+B站使用多个关键 Cookie 来管理用户登录状态：
+
+```mermaid
+graph TB
+    subgraph B站核心Cookie
+        SESSDATA["SESSDATA<br/>会话凭证"]
+        DedeUserID["DedeUserID<br/>用户ID"]
+        bili_jct["bili_jct<br/>CSRF Token"]
+    end
+
+    subgraph 辅助Cookie
+        buvid3["buvid3<br/>设备标识"]
+        buvid4["buvid4<br/>设备标识"]
+        sid["sid<br/>短会话ID"]
+    end
+
+    SESSDATA --> API["API请求认证"]
+    DedeUserID --> API
+    bili_jct --> POST["POST请求CSRF"]
+
+    style SESSDATA fill:#e8f5e9,stroke:#4caf50
+    style DedeUserID fill:#e8f5e9,stroke:#4caf50
+    style bili_jct fill:#fff3e0,stroke:#ff9800
+```
+
+| Cookie 名称 | 作用 | 有效期 | 说明 |
+|------------|------|-------|------|
+| **SESSDATA** | 会话凭证 | ~1个月 | 最重要的登录凭证 |
+| **DedeUserID** | 用户ID | ~1个月 | 用于部分API请求 |
+| **bili_jct** | CSRF Token | ~1个月 | POST请求必需 |
+| buvid3 | 设备标识 | ~1年 | 追踪设备 |
+| buvid4 | 设备标识 | ~1年 | 追踪设备 |
+| sid | 短会话 | 会话 | 短期会话标识 |
+
+### 5.2 B站 Cookie 提取器
+
+```python
+# -*- coding: utf-8 -*-
+"""
+B站 Cookie 提取和管理
+"""
+
+import json
+import asyncio
+from pathlib import Path
+from typing import Optional, Dict, List
+from dataclasses import dataclass
+from datetime import datetime
+from loguru import logger
+
+
+@dataclass
+class BilibiliCookies:
+    """B站 Cookie 数据类"""
+    sessdata: str
+    dede_user_id: str
+    bili_jct: str
+    buvid3: str = ""
+    buvid4: str = ""
+    sid: str = ""
+    raw_cookies: List[dict] = None
+
+    @classmethod
+    def from_playwright_cookies(cls, cookies: List[dict]) -> "BilibiliCookies":
+        """从 Playwright 格式的 Cookie 创建"""
+        cookie_dict = {c["name"]: c["value"] for c in cookies}
+
+        return cls(
+            sessdata=cookie_dict.get("SESSDATA", ""),
+            dede_user_id=cookie_dict.get("DedeUserID", ""),
+            bili_jct=cookie_dict.get("bili_jct", ""),
+            buvid3=cookie_dict.get("buvid3", ""),
+            buvid4=cookie_dict.get("buvid4", ""),
+            sid=cookie_dict.get("sid", ""),
+            raw_cookies=cookies
+        )
+
+    @classmethod
+    def from_browser_string(cls, cookie_string: str) -> "BilibiliCookies":
+        """
+        从浏览器复制的 Cookie 字符串创建
+
+        格式: "SESSDATA=xxx; DedeUserID=xxx; bili_jct=xxx"
+        """
+        cookie_dict = {}
+        for item in cookie_string.split(";"):
+            item = item.strip()
+            if "=" in item:
+                key, value = item.split("=", 1)
+                cookie_dict[key.strip()] = value.strip()
+
+        return cls(
+            sessdata=cookie_dict.get("SESSDATA", ""),
+            dede_user_id=cookie_dict.get("DedeUserID", ""),
+            bili_jct=cookie_dict.get("bili_jct", ""),
+            buvid3=cookie_dict.get("buvid3", ""),
+            buvid4=cookie_dict.get("buvid4", ""),
+            sid=cookie_dict.get("sid", "")
+        )
+
+    def to_httpx_cookies(self) -> Dict[str, str]:
+        """转换为 httpx 可用的格式"""
+        cookies = {
+            "SESSDATA": self.sessdata,
+            "DedeUserID": self.dede_user_id,
+            "bili_jct": self.bili_jct,
+        }
+        if self.buvid3:
+            cookies["buvid3"] = self.buvid3
+        if self.buvid4:
+            cookies["buvid4"] = self.buvid4
+        if self.sid:
+            cookies["sid"] = self.sid
+        return cookies
+
+    def to_playwright_cookies(self, domain: str = ".bilibili.com") -> List[dict]:
+        """转换为 Playwright 可用的格式"""
+        if self.raw_cookies:
+            return self.raw_cookies
+
+        cookies = []
+        for name, value in self.to_httpx_cookies().items():
+            cookies.append({
+                "name": name,
+                "value": value,
+                "domain": domain,
+                "path": "/"
+            })
+        return cookies
+
+    def is_valid(self) -> bool:
+        """检查核心 Cookie 是否存在"""
+        return bool(self.sessdata and self.dede_user_id and self.bili_jct)
+
+    def to_header_string(self) -> str:
+        """转换为请求头格式"""
+        return "; ".join(f"{k}={v}" for k, v in self.to_httpx_cookies().items())
+
+
+class BilibiliCookieManager:
+    """
+    B站 Cookie 管理器
+
+    功能：
+    - Cookie 加载/保存
+    - 登录状态检测
+    - Cookie 有效性验证
+    """
+
+    # 登录状态检测 API
+    CHECK_URL = "https://api.bilibili.com/x/web-interface/nav"
+
+    def __init__(self, storage_path: str = "bilibili_cookies.json"):
+        self.storage_path = Path(storage_path)
+        self._cookies: Optional[BilibiliCookies] = None
+        self._last_check: Optional[datetime] = None
+
+    async def load(self) -> bool:
+        """从文件加载 Cookie"""
+        if not self.storage_path.exists():
+            logger.warning(f"Cookie 文件不存在: {self.storage_path}")
+            return False
+
+        try:
+            with open(self.storage_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            if isinstance(data, list):
+                # Playwright 格式
+                self._cookies = BilibiliCookies.from_playwright_cookies(data)
+            elif isinstance(data, dict):
+                # 自定义格式
+                self._cookies = BilibiliCookies(
+                    sessdata=data.get("SESSDATA", ""),
+                    dede_user_id=data.get("DedeUserID", ""),
+                    bili_jct=data.get("bili_jct", ""),
+                    buvid3=data.get("buvid3", ""),
+                    buvid4=data.get("buvid4", ""),
+                    sid=data.get("sid", "")
+                )
+
+            logger.info(f"Cookie 加载成功，用户ID: {self._cookies.dede_user_id}")
+            return True
+
+        except Exception as e:
+            logger.error(f"加载 Cookie 失败: {e}")
+            return False
+
+    async def save(self, cookies: BilibiliCookies):
+        """保存 Cookie 到文件"""
+        self._cookies = cookies
+        self.storage_path.parent.mkdir(parents=True, exist_ok=True)
+
+        data = {
+            "SESSDATA": cookies.sessdata,
+            "DedeUserID": cookies.dede_user_id,
+            "bili_jct": cookies.bili_jct,
+            "buvid3": cookies.buvid3,
+            "buvid4": cookies.buvid4,
+            "sid": cookies.sid,
+            "save_time": datetime.now().isoformat()
+        }
+
+        with open(self.storage_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Cookie 已保存到: {self.storage_path}")
+
+    async def verify(self) -> bool:
+        """验证 Cookie 是否有效"""
+        if not self._cookies or not self._cookies.is_valid():
+            return False
+
+        import httpx
+
+        try:
+            async with httpx.AsyncClient(
+                cookies=self._cookies.to_httpx_cookies(),
+                timeout=10
+            ) as client:
+                resp = await client.get(self.CHECK_URL)
+                data = resp.json()
+
+                if data.get("code") == 0:
+                    user_info = data.get("data", {})
+                    if user_info.get("isLogin"):
+                        logger.info(f"Cookie 有效，用户: {user_info.get('uname')}")
+                        self._last_check = datetime.now()
+                        return True
+
+                logger.warning("Cookie 已失效")
+                return False
+
+        except Exception as e:
+            logger.error(f"验证 Cookie 失败: {e}")
+            return False
+
+    async def get_valid_cookies(self) -> Optional[BilibiliCookies]:
+        """获取有效的 Cookie"""
+        if self._cookies is None:
+            await self.load()
+
+        if self._cookies and await self.verify():
+            return self._cookies
+
+        return None
+
+    @property
+    def cookies(self) -> Optional[BilibiliCookies]:
+        """获取当前 Cookie（不验证）"""
+        return self._cookies
+```
+
+### 5.3 B站 Cookie 使用示例
+
+```python
+# -*- coding: utf-8 -*-
+"""
+B站 Cookie 使用示例
+"""
+
+import asyncio
+import httpx
+from loguru import logger
+
+
+async def demo_bilibili_cookie():
+    """演示如何使用 B站 Cookie"""
+
+    # 方式1: 从浏览器复制的字符串
+    cookie_string = "SESSDATA=xxx; DedeUserID=123456; bili_jct=xxx"
+    cookies = BilibiliCookies.from_browser_string(cookie_string)
+
+    # 方式2: 使用 Cookie 管理器
+    manager = BilibiliCookieManager("data/bilibili_cookies.json")
+    await manager.load()
+
+    if not await manager.verify():
+        logger.error("Cookie 无效，请重新登录")
+        return
+
+    cookies = manager.cookies
+
+    # 使用 Cookie 请求 API
+    async with httpx.AsyncClient(
+        cookies=cookies.to_httpx_cookies(),
+        headers={
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/131.0.0.0 Safari/537.36",
+            "Referer": "https://www.bilibili.com/"
+        }
+    ) as client:
+        # 获取用户信息
+        resp = await client.get("https://api.bilibili.com/x/web-interface/nav")
+        data = resp.json()
+
+        if data.get("code") == 0:
+            user = data.get("data", {})
+            print(f"用户名: {user.get('uname')}")
+            print(f"等级: {user.get('level_info', {}).get('current_level')}")
+            print(f"硬币: {user.get('money')}")
+
+        # 获取收藏夹（需要登录）
+        resp = await client.get(
+            "https://api.bilibili.com/x/v3/fav/folder/created/list-all",
+            params={"up_mid": cookies.dede_user_id}
+        )
+        fav_data = resp.json()
+
+        if fav_data.get("code") == 0:
+            folders = fav_data.get("data", {}).get("list", [])
+            print(f"\n收藏夹列表 ({len(folders)}个):")
+            for folder in folders[:5]:
+                print(f"  - {folder.get('title')} ({folder.get('media_count')}个)")
+
+
+if __name__ == "__main__":
+    asyncio.run(demo_bilibili_cookie())
+```
+
+### 5.4 B站 Cookie 与 Playwright 集成
+
+```python
+# -*- coding: utf-8 -*-
+"""
+B站 Cookie 与 Playwright 集成
+"""
+
+import asyncio
+from playwright.async_api import async_playwright
+from loguru import logger
+
+
+async def bilibili_with_playwright():
+    """使用 Playwright 注入 B站 Cookie"""
+
+    # 加载 Cookie
+    manager = BilibiliCookieManager("data/bilibili_cookies.json")
+    await manager.load()
+
+    if not manager.cookies or not manager.cookies.is_valid():
+        logger.error("Cookie 无效")
+        return
+
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            locale="zh-CN"
+        )
+
+        # 注入 Cookie
+        await context.add_cookies(
+            manager.cookies.to_playwright_cookies()
+        )
+
+        page = await context.new_page()
+
+        # 访问个人主页
+        await page.goto("https://space.bilibili.com/", wait_until="networkidle")
+
+        # 检查是否登录成功
+        avatar = page.locator(".bili-avatar")
+        if await avatar.count() > 0:
+            logger.info("Cookie 注入成功，已登录")
+
+            # 获取用户名
+            username = await page.locator(".h-name").text_content()
+            print(f"当前用户: {username}")
+        else:
+            logger.warning("Cookie 可能已过期")
+
+        await browser.close()
+
+
+if __name__ == "__main__":
+    asyncio.run(bilibili_with_playwright())
+```
+
+---
+
+## 六、完整的登录会话管理
 
 下面是一个完整的实战示例，展示如何在爬虫中管理登录状态：
 
@@ -802,8 +1191,54 @@ if __name__ == "__main__":
 2. **Cookie 提取存储**：手动提取、自动化提取、序列化格式、加密存储
 3. **Cookie 注入使用**：httpx 和 Playwright 中的使用方式、跨工具共享
 4. **登录状态管理**：状态检测、过期监控、自动刷新机制
+5. **B站实战**：Cookie 结构分析、专用管理器、验证与使用
 
 掌握这些技术后，你就能够处理大多数需要登录的爬虫场景。
+
+---
+
+## 与第11章实战项目的关联
+
+本章 Cookie 管理技术在第11章 B站综合实战项目中有核心应用：
+
+| 本章内容 | 第11章对应实现 | 文件位置 |
+|---------|--------------|---------|
+| BilibiliCookies 数据类 | Cookie 模型定义 | `models/cookies.py` |
+| BilibiliCookieManager | 登录管理器 | `login/auth.py` |
+| Cookie 验证逻辑 | 登录状态检测 | `login/auth.py` |
+| Playwright 集成 | 扫码登录实现 | `login/auth.py` |
+
+```mermaid
+graph LR
+    subgraph 本章知识点
+        A1["Cookie结构"]
+        A2["Cookie管理器"]
+        A3["登录验证"]
+    end
+
+    subgraph 第11章实战应用
+        B1["扫码登录"]
+        B2["登录态保持"]
+        B3["API请求认证"]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B3
+
+    style A1 fill:#e3f2fd,stroke:#2196f3
+    style A2 fill:#e3f2fd,stroke:#2196f3
+    style A3 fill:#e3f2fd,stroke:#2196f3
+    style B1 fill:#c8e6c9,stroke:#4caf50
+    style B2 fill:#c8e6c9,stroke:#4caf50
+    style B3 fill:#c8e6c9,stroke:#4caf50
+```
+
+**学习建议**：
+
+1. 理解 B站三大核心 Cookie（SESSDATA、DedeUserID、bili_jct）的作用
+2. 掌握 Cookie 的提取、存储、验证完整流程
+3. 在第11章中，`login/auth.py` 是 Cookie 管理的核心实现
 
 ## 下一章预告
 

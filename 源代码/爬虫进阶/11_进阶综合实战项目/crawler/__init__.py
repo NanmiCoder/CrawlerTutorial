@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
-from .spider import BaseCrawler, ContentCrawler, ScrollCrawler
+"""爬虫模块"""
+from .spider import BilibiliCrawler, run_crawler
 
-__all__ = ['BaseCrawler', 'ContentCrawler', 'ScrollCrawler']
+__all__ = ['BilibiliCrawler', 'run_crawler']

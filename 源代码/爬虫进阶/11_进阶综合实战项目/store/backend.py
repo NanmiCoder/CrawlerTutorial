@@ -1,13 +1,32 @@
 # -*- coding: utf-8 -*-
-# @Desc: 存储后端模块
+"""
+数据存储后端模块
+
+本模块实现了多种数据存储后端，包括：
+- JSONStorage: JSON 文件存储
+- CSVStorage: CSV 文件存储
+- StorageManager: 统一存储管理器
+
+支持保存 BilibiliVideo 模型数据，自动转换为适合存储的格式。
+
+参考 MediaCrawler 项目的实现：
+- https://github.com/NanmiCoder/MediaCrawler/blob/main/store/bilibili/_store_impl.py
+"""
 
 import json
 import csv
 from abc import ABC, abstractmethod
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Union
 from loguru import logger
+
+# 尝试导入模型
+try:
+    from models.bilibili import BilibiliVideo
+    HAS_MODEL = True
+except ImportError:
+    HAS_MODEL = False
 
 
 class BaseStorage(ABC):
@@ -22,6 +41,23 @@ class BaseStorage(ABC):
     async def load(self) -> List[Dict]:
         """加载数据"""
         pass
+
+    def _convert_to_dict(self, item: Any) -> Dict:
+        """
+        将对象转换为字典
+
+        支持 BilibiliVideo 模型和普通字典。
+        """
+        if HAS_MODEL and isinstance(item, BilibiliVideo):
+            return item.to_dict()
+        elif hasattr(item, 'model_dump'):
+            return item.model_dump()
+        elif hasattr(item, 'dict'):
+            return item.dict()
+        elif isinstance(item, dict):
+            return item
+        else:
+            return dict(item)
 
 
 class JSONStorage(BaseStorage):

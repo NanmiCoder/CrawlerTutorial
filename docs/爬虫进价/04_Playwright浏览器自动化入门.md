@@ -68,31 +68,63 @@ with sync_playwright() as p:
 
 ### Browser/Context/Page 三层模型
 
+```mermaid
+graph TB
+    subgraph Browser["Browser 浏览器实例"]
+        direction TB
+
+        subgraph Context1["Browser Context 1<br/>(登录态环境)"]
+            Page1["Page 1<br/>B站首页"]
+            Page2["Page 2<br/>视频详情"]
+        end
+
+        subgraph Context2["Browser Context 2<br/>(匿名环境)"]
+            Page3["Page 3<br/>搜索页面"]
+        end
+    end
+
+    style Browser fill:#e3f2fd,stroke:#1976d2
+    style Context1 fill:#e8f5e9,stroke:#4caf50
+    style Context2 fill:#fff3e0,stroke:#ff9800
+    style Page1 fill:#f3e5f5,stroke:#9c27b0
+    style Page2 fill:#f3e5f5,stroke:#9c27b0
+    style Page3 fill:#f3e5f5,stroke:#9c27b0
 ```
-┌─────────────────────────────────────────────┐
-│                  Browser                     │
-│  (一个浏览器实例，可以是 Chromium/Firefox等)   │
-│                                             │
-│    ┌─────────────────────────────────────┐  │
-│    │          Browser Context            │  │
-│    │    (独立的浏览器环境，相当于隐身窗口)   │  │
-│    │                                     │  │
-│    │    ┌─────────┐    ┌─────────┐      │  │
-│    │    │  Page   │    │  Page   │      │  │
-│    │    │ (标签页) │    │ (标签页) │      │  │
-│    │    └─────────┘    └─────────┘      │  │
-│    └─────────────────────────────────────┘  │
-│                                             │
-│    ┌─────────────────────────────────────┐  │
-│    │       Another Browser Context       │  │
-│    │         (另一个独立环境)              │  │
-│    └─────────────────────────────────────┘  │
-└─────────────────────────────────────────────┘
+
+**三层架构说明**：
+
+```mermaid
+flowchart LR
+    subgraph Browser层
+        B["Browser<br/>浏览器进程"]
+    end
+
+    subgraph Context层
+        C1["Context<br/>Cookie/Storage"]
+        C2["Context<br/>独立环境"]
+    end
+
+    subgraph Page层
+        P1["Page<br/>页面操作"]
+        P2["Page<br/>DOM/Network"]
+    end
+
+    B --> C1 & C2
+    C1 --> P1
+    C2 --> P2
+
+    style B fill:#e3f2fd,stroke:#2196f3
+    style C1 fill:#e8f5e9,stroke:#4caf50
+    style C2 fill:#e8f5e9,stroke:#4caf50
+    style P1 fill:#fff3e0,stroke:#ff9800
+    style P2 fill:#fff3e0,stroke:#ff9800
 ```
 
 - **Browser**：浏览器实例，对应一个浏览器进程
 - **Browser Context**：独立的浏览器环境，有独立的 Cookie、localStorage 等
 - **Page**：一个标签页，在这里进行实际的页面操作
+
+> **B站爬虫应用**：可以用不同 Context 分别处理登录态和匿名访问，互不干扰。
 
 ### 同步 vs 异步 API
 
@@ -574,14 +606,44 @@ context = await p.chromium.launch_persistent_context(
 
 ---
 
-## 实战案例：爬取 SPA 应用
+## B站 Playwright 实战
 
-让我们用 Playwright 爬取一个需要 JavaScript 渲染的单页应用。
+### B站页面结构分析
+
+B站作为典型的 SPA 应用，很多内容需要 JavaScript 渲染才能显示。Playwright 非常适合处理这类场景。
+
+```mermaid
+flowchart TD
+    subgraph B站页面类型
+        Home["首页<br/>推荐/热门"]
+        Search["搜索页<br/>关键词搜索"]
+        Video["视频页<br/>播放/评论"]
+        Space["个人空间<br/>UP主信息"]
+    end
+
+    subgraph 加载特点
+        SPA["SPA架构<br/>动态路由"]
+        Lazy["懒加载<br/>滚动触发"]
+        API["API请求<br/>JSON数据"]
+    end
+
+    Home --> SPA
+    Search --> API
+    Video --> Lazy
+    Space --> API
+
+    style Home fill:#e3f2fd,stroke:#2196f3
+    style Search fill:#fff3e0,stroke:#ff9800
+    style Video fill:#e8f5e9,stroke:#4caf50
+    style Space fill:#f3e5f5,stroke:#9c27b0
+```
+
+### 实战：Playwright 访问 B站首页
 
 ```python
 # -*- coding: utf-8 -*-
 """
-使用 Playwright 爬取 SPA 应用示例
+使用 Playwright 访问 B站示例
 """
 
 import asyncio
@@ -589,43 +651,75 @@ from playwright.async_api import async_playwright
 from loguru import logger
 
 
-async def crawl_spa():
-    """爬取 SPA 应用示例"""
+async def visit_bilibili_home():
+    """访问B站首页并提取热门视频"""
     async with async_playwright() as p:
         # 启动浏览器
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"]
+        )
+
+        # 创建上下文，设置视口和语言
         context = await browser.new_context(
-            viewport={"width": 1920, "height": 1080}
+            viewport={"width": 1920, "height": 1080},
+            locale="zh-CN",
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/131.0.0.0 Safari/537.36"
         )
         page = await context.new_page()
 
         try:
-            # 访问页面
-            logger.info("正在访问页面...")
+            logger.info("正在访问B站首页...")
             await page.goto(
-                "https://quotes.toscrape.com/js/",
+                "https://www.bilibili.com",
                 wait_until="networkidle"
             )
 
-            # 等待内容加载
-            await page.wait_for_selector("div.quote")
+            # 等待视频卡片加载
+            await page.wait_for_selector(".bili-video-card", timeout=10000)
 
-            # 提取数据
-            quotes = await page.locator("div.quote").all()
-            logger.info(f"找到 {len(quotes)} 条名言")
+            # 提取热门视频
+            video_cards = await page.locator(".bili-video-card").all()
+            logger.info(f"找到 {len(video_cards)} 个视频卡片")
 
             results = []
-            for quote in quotes:
-                text = await quote.locator("span.text").text_content()
-                author = await quote.locator("small.author").text_content()
-                results.append({
-                    "text": text,
-                    "author": author
-                })
+            for card in video_cards[:10]:
+                try:
+                    # 提取视频标题
+                    title_el = card.locator(".bili-video-card__info--tit")
+                    title = await title_el.get_attribute("title") or await title_el.text_content()
+
+                    # 提取UP主
+                    author_el = card.locator(".bili-video-card__info--author")
+                    author = await author_el.text_content() if await author_el.count() > 0 else "未知"
+
+                    # 提取播放量
+                    view_el = card.locator(".bili-video-card__stats--item span").first
+                    view = await view_el.text_content() if await view_el.count() > 0 else "0"
+
+                    # 提取视频链接
+                    link_el = card.locator("a").first
+                    href = await link_el.get_attribute("href") or ""
+
+                    results.append({
+                        "title": title.strip() if title else "",
+                        "author": author.strip() if author else "",
+                        "view": view.strip() if view else "",
+                        "url": f"https:{href}" if href.startswith("//") else href
+                    })
+                except Exception as e:
+                    logger.debug(f"提取视频信息失败: {e}")
+                    continue
 
             # 输出结果
-            for i, item in enumerate(results[:5], 1):
-                print(f"{i}. {item['author']}: {item['text'][:50]}...")
+            logger.info(f"成功提取 {len(results)} 个视频信息")
+            for i, video in enumerate(results[:5], 1):
+                print(f"{i}. {video['title'][:40]}...")
+                print(f"   UP主: {video['author']} | 播放: {video['view']}")
+                print(f"   链接: {video['url']}")
+                print()
 
             return results
 
@@ -634,8 +728,244 @@ async def crawl_spa():
 
 
 if __name__ == "__main__":
-    asyncio.run(crawl_spa())
+    asyncio.run(visit_bilibili_home())
 ```
+
+### 实战：搜索 B站视频
+
+```python
+# -*- coding: utf-8 -*-
+"""
+使用 Playwright 搜索B站视频
+"""
+
+import asyncio
+from playwright.async_api import async_playwright
+from loguru import logger
+from typing import List, Dict, Any
+
+
+async def search_bilibili_videos(keyword: str, max_results: int = 20) -> List[Dict[str, Any]]:
+    """
+    搜索B站视频
+
+    Args:
+        keyword: 搜索关键词
+        max_results: 最大结果数
+
+    Returns:
+        视频列表
+    """
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(
+            viewport={"width": 1920, "height": 1080},
+            locale="zh-CN"
+        )
+        page = await context.new_page()
+
+        try:
+            # 直接访问搜索页
+            search_url = f"https://search.bilibili.com/all?keyword={keyword}"
+            logger.info(f"搜索关键词: {keyword}")
+            await page.goto(search_url, wait_until="networkidle")
+
+            # 等待搜索结果加载
+            await page.wait_for_selector(".bili-video-card", timeout=15000)
+
+            # 滚动加载更多结果
+            for _ in range(3):
+                await page.mouse.wheel(0, 1000)
+                await page.wait_for_timeout(500)
+
+            # 提取搜索结果
+            video_items = await page.locator(".bili-video-card").all()
+            logger.info(f"找到 {len(video_items)} 个搜索结果")
+
+            results = []
+            for item in video_items[:max_results]:
+                try:
+                    # 标题
+                    title_el = item.locator(".bili-video-card__info--tit a")
+                    title = await title_el.get_attribute("title") or ""
+
+                    # 链接
+                    href = await title_el.get_attribute("href") or ""
+
+                    # 从链接提取BV号
+                    bvid = ""
+                    if "/video/" in href:
+                        bvid = href.split("/video/")[-1].split("?")[0].strip("/")
+
+                    # UP主
+                    author_el = item.locator(".bili-video-card__info--author")
+                    author = await author_el.text_content() if await author_el.count() > 0 else ""
+
+                    # 播放量和弹幕数
+                    stats = item.locator(".bili-video-card__stats--item")
+                    view_count = ""
+                    danmaku_count = ""
+                    if await stats.count() >= 2:
+                        view_count = await stats.nth(0).locator("span").text_content() or ""
+                        danmaku_count = await stats.nth(1).locator("span").text_content() or ""
+
+                    if title and bvid:
+                        results.append({
+                            "title": title.strip(),
+                            "bvid": bvid,
+                            "author": author.strip(),
+                            "view": view_count.strip(),
+                            "danmaku": danmaku_count.strip(),
+                            "url": f"https://www.bilibili.com/video/{bvid}"
+                        })
+
+                except Exception as e:
+                    logger.debug(f"提取视频失败: {e}")
+                    continue
+
+            logger.info(f"成功提取 {len(results)} 个视频")
+            return results
+
+        finally:
+            await browser.close()
+
+
+async def main():
+    # 搜索Python教程
+    videos = await search_bilibili_videos("Python教程", max_results=10)
+
+    print("\n=== B站视频搜索结果 ===\n")
+    for i, video in enumerate(videos, 1):
+        print(f"{i}. {video['title']}")
+        print(f"   BV号: {video['bvid']}")
+        print(f"   UP主: {video['author']}")
+        print(f"   播放: {video['view']} | 弹幕: {video['danmaku']}")
+        print()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### 实战：拦截 B站 API 响应
+
+Playwright 的网络拦截功能可以直接获取 B站 API 返回的 JSON 数据，比解析 DOM 更高效：
+
+```python
+# -*- coding: utf-8 -*-
+"""
+使用 Playwright 拦截 B站 API 响应
+"""
+
+import asyncio
+import json
+from playwright.async_api import async_playwright
+from loguru import logger
+from typing import List, Dict, Any
+
+
+async def intercept_bilibili_api(keyword: str) -> List[Dict[str, Any]]:
+    """
+    拦截B站搜索API响应
+
+    通过网络拦截直接获取JSON数据，比解析DOM更可靠
+    """
+    results = []
+
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context()
+        page = await context.new_page()
+
+        # 监听API响应
+        async def handle_response(response):
+            if "search/type" in response.url and "search_type=video" in response.url:
+                try:
+                    data = await response.json()
+                    if data.get("code") == 0:
+                        videos = data.get("data", {}).get("result", [])
+                        for video in videos:
+                            results.append({
+                                "title": video.get("title", "").replace("<em class=\"keyword\">", "").replace("</em>", ""),
+                                "bvid": video.get("bvid", ""),
+                                "author": video.get("author", ""),
+                                "play": video.get("play", 0),
+                                "danmaku": video.get("video_review", 0),
+                                "description": video.get("description", ""),
+                                "duration": video.get("duration", ""),
+                                "pubdate": video.get("pubdate", 0),
+                            })
+                        logger.info(f"拦截到 {len(videos)} 个视频数据")
+                except Exception as e:
+                    logger.error(f"解析API响应失败: {e}")
+
+        page.on("response", handle_response)
+
+        # 访问搜索页触发API请求
+        search_url = f"https://search.bilibili.com/all?keyword={keyword}"
+        await page.goto(search_url, wait_until="networkidle")
+
+        # 等待数据拦截完成
+        await page.wait_for_timeout(2000)
+
+        await browser.close()
+
+    return results
+
+
+async def main():
+    videos = await intercept_bilibili_api("Python爬虫")
+
+    print("\n=== 通过API拦截获取的数据 ===\n")
+    for i, video in enumerate(videos[:10], 1):
+        print(f"{i}. {video['title']}")
+        print(f"   BV号: {video['bvid']}")
+        print(f"   UP主: {video['author']}")
+        print(f"   播放: {video['play']} | 弹幕: {video['danmaku']}")
+        print(f"   时长: {video['duration']}")
+        print()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### B站 Playwright 使用注意事项
+
+```mermaid
+graph LR
+    subgraph 反检测
+        A1["隐藏自动化特征"]
+        A2["模拟真实UA"]
+        A3["设置合理视口"]
+    end
+
+    subgraph 性能优化
+        B1["禁用图片加载"]
+        B2["拦截广告资源"]
+        B3["复用浏览器实例"]
+    end
+
+    subgraph 稳定性
+        C1["适当等待时间"]
+        C2["处理弹窗/广告"]
+        C3["异常重试机制"]
+    end
+
+    A1 --> B1 --> C1
+
+    style A1 fill:#e3f2fd,stroke:#2196f3
+    style B1 fill:#fff3e0,stroke:#ff9800
+    style C1 fill:#e8f5e9,stroke:#4caf50
+```
+
+**关键注意点**：
+
+1. **反自动化检测**：B站会检测 `navigator.webdriver`，需要使用反检测技术（下一章详解）
+2. **请求频率**：避免频繁刷新页面，建议间隔 1-2 秒
+3. **Cookie 管理**：登录态通过 Context 的 `storage_state` 保存和恢复
+4. **资源优化**：禁用图片/字体加载可大幅提升速度
+5. **API 拦截**：直接拦截 API 响应比解析 DOM 更稳定高效
 
 ---
 
@@ -650,7 +980,52 @@ if __name__ == "__main__":
 5. **等待策略**：自动等待、显式等待、超时设置
 6. **内容提取**：文本、属性、HTML、执行 JavaScript
 7. **网络拦截**：监听请求响应、拦截修改请求
-8. **截图与 PDF**：页面截图、元素截图、PDF 导出
+8. **B站实战**：访问首页、搜索视频、拦截API响应
+
+---
+
+## 与第11章实战项目的关联
+
+本章 Playwright 基础知识在第11章 B站综合实战项目中有重要应用：
+
+| 本章内容 | 第11章对应实现 | 文件位置 |
+|---------|--------------|---------|
+| Browser/Context/Page 模型 | 浏览器管理器 | `tools/browser_manager.py` |
+| 元素定位与交互 | 页面操作封装 | `login/auth.py` |
+| 网络拦截 | API 数据提取 | `crawler/spider.py` |
+| Cookie 管理 | 登录态保持 | `login/auth.py` |
+
+```mermaid
+graph LR
+    subgraph 本章知识点
+        A1["Page 操作"]
+        A2["元素定位"]
+        A3["网络拦截"]
+    end
+
+    subgraph 第11章实战应用
+        B1["扫码登录实现"]
+        B2["数据提取"]
+        B3["API监听"]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B3
+
+    style A1 fill:#e3f2fd,stroke:#2196f3
+    style A2 fill:#e3f2fd,stroke:#2196f3
+    style A3 fill:#e3f2fd,stroke:#2196f3
+    style B1 fill:#c8e6c9,stroke:#4caf50
+    style B2 fill:#c8e6c9,stroke:#4caf50
+    style B3 fill:#c8e6c9,stroke:#4caf50
+```
+
+**学习建议**：
+
+1. 先掌握本章 Playwright 的基本操作
+2. 理解 Browser/Context/Page 三层架构的设计思想
+3. 在第11章实战中，重点关注 `login/auth.py` 中如何使用 Playwright 实现扫码登录
 
 ---
 

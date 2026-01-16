@@ -1,0 +1,22 @@
+[project]
+name = "chapter06-cookie-session"
+version = "0.1.0"
+description = "第06章：登录认证 - Cookie与Session管理、登录状态检测、真实登录演示"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27.0",
+    "loguru>=0.7.0",
+]
+
+[project.optional-dependencies]
+encryption = [
+    "cryptography>=42.0.0",  # Cookie加密存储（可选）
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

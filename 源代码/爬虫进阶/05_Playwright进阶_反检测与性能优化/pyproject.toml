@@ -1,0 +1,19 @@
+[project]
+name = "chapter05-playwright-advanced"
+version = "0.1.0"
+description = "第05章：Playwright进阶 - 反检测、stealth.js注入、CDP模式、性能优化"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright>=1.45.0",
+    "loguru>=0.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+# 提示：安装后需要运行 playwright install 安装浏览器驱动

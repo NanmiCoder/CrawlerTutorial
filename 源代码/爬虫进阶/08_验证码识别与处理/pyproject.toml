@@ -1,0 +1,37 @@
+[project]
+name = "chapter08-captcha-recognition"
+version = "0.1.0"
+description = "第08章：验证码识别与处理 - 图片验证码OCR、滑块验证码、轨迹生成"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "loguru>=0.7.0",
+    "pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+ocr = [
+    "ddddocr>=1.4.0",  # OCR识别库
+]
+cv = [
+    "opencv-python>=4.9.0",  # 图像处理（滑块验证码）
+]
+generate = [
+    "captcha>=0.5.0",  # 本地验证码生成
+]
+viz = [
+    "matplotlib>=3.8.0",  # 轨迹可视化
+]
+all = [
+    "ddddocr>=1.4.0",
+    "opencv-python>=4.9.0",
+    "captcha>=0.5.0",
+    "matplotlib>=3.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

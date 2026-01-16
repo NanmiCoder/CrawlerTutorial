@@ -1,0 +1,23 @@
+[project]
+name = "chapter02-anti-detection-basics"
+version = "0.1.0"
+description = "第02章：反爬虫对抗基础 - 请求伪装、User-Agent轮换、速率控制"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27.0",
+    "loguru>=0.7.0",
+    "fake-useragent>=1.5.0",
+]
+
+[project.optional-dependencies]
+advanced = [
+    "curl-cffi>=0.7.0",  # TLS指纹伪装（可选）
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

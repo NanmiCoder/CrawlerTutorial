@@ -152,7 +152,7 @@ async def demo_proxied_crawler():
         # 创建爬虫
         crawler = ProxiedCrawler(pool)
 
-        # 测试请求
+        # 测试请求 - 使用多个测试URL
         urls = [
             "https://httpbin.org/ip",
             "https://httpbin.org/headers",
@@ -167,6 +167,57 @@ async def demo_proxied_crawler():
                 print(f"  ✗ {url[:40]}... 失败")
 
         print(f"\n爬取统计: 成功 {crawler.success_count}, 失败 {crawler.fail_count}")
+
+
+async def demo_multi_url_test():
+    """演示多URL代理测试 - 综合验证代理功能"""
+    print("\n" + "=" * 60)
+    print("多URL代理测试演示")
+    print("=" * 60)
+
+    # 定义测试URL列表
+    test_urls = [
+        {
+            "url": "https://httpbin.org/ip",
+            "name": "httpbin IP检测",
+            "extract": lambda data: data.get("origin", "N/A")
+        },
+        {
+            "url": "https://api.ipify.org?format=json",
+            "name": "ipify IP服务",
+            "extract": lambda data: data.get("ip", "N/A")
+        },
+        {
+            "url": "http://ip-api.com/json/",
+            "name": "ip-api 地理位置",
+            "extract": lambda data: f"{data.get('query', 'N/A')} ({data.get('country', 'N/A')}, {data.get('city', 'N/A')})"
+        },
+    ]
+
+    print("\n测试不使用代理的情况:")
+    print("-" * 60)
+
+    async with httpx.AsyncClient(timeout=10) as client:
+        for test in test_urls:
+            try:
+                response = await client.get(test["url"])
+                if response.status_code == 200:
+                    try:
+                        data = response.json()
+                        result = test["extract"](data)
+                        print(f"  ✓ {test['name']}: {result}")
+                    except Exception:
+                        print(f"  ✓ {test['name']}: {response.text[:50]}...")
+                else:
+                    print(f"  ✗ {test['name']}: HTTP {response.status_code}")
+            except Exception as e:
+                print(f"  ✗ {test['name']}: {str(e)[:50]}")
+
+    print("\n说明:")
+    print("  - httpbin.org: 通用HTTP测试服务，返回请求IP")
+    print("  - ipify.org: 专门的IP获取服务，简单直接")
+    print("  - ip-api.com: 提供IP地理位置信息")
+    print("\n如果使用代理，这些服务返回的IP应该是代理服务器的IP")
 
 
 async def demo_manual_proxy():
@@ -211,6 +262,7 @@ async def main():
     # 运行演示
     await demo_proxy_pool()
     await demo_proxied_crawler()
+    await demo_multi_url_test()  # 新增：多URL测试
     # await demo_manual_proxy()  # 需要有可用代理才能测试
 
     print("\n" + "=" * 60)

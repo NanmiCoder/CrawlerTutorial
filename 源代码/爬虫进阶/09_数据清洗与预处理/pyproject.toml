@@ -1,0 +1,21 @@
+[project]
+name = "chapter09-data-cleaning"
+version = "0.1.0"
+description = "第09章：数据清洗与预处理 - 文本清洗、数据标准化、去重算法"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # 本章主要使用标准库，无特殊依赖
+]
+
+[project.optional-dependencies]
+simhash = [
+    "simhash>=2.1.0",  # SimHash去重（可选）
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

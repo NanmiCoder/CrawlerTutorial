@@ -1,0 +1,19 @@
+[project]
+name = "chapter04-playwright-basics"
+version = "0.1.0"
+description = "第04章：Playwright浏览器自动化入门 - 页面操作、元素定位、等待策略"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright>=1.45.0",
+    "loguru>=0.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+# 提示：安装后需要运行 playwright install 安装浏览器驱动

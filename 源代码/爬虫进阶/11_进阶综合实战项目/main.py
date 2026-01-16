@@ -69,17 +69,20 @@ async def demo_crawl():
             context = await browser.start()
 
             # 配置登录认证（示例）
+            # 注意：books.toscrape.com 不需要登录，这里保留登录代码作为框架示例
+            # 如果目标网站需要登录，可以取消注释以下代码并配置正确的参数
+            """
             auth = AuthManager()
             if settings.login_type == LoginType.COOKIE:
                 # Cookie 登录
                 auth.set_cookie_auth(
                     cookie_file=settings.cookie_file,
-                    domain="example.com"
+                    domain="books.toscrape.com"
                 )
             else:
-                # 扫码登录
+                # 扫码登录（需要目标网站支持）
                 auth.set_qrcode_auth(
-                    login_url="https://example.com/login",
+                    login_url="http://books.toscrape.com/login",
                     qrcode_selector=".qrcode-img",
                     success_selector=".user-avatar",
                     save_cookie_file=settings.cookie_file
@@ -95,23 +98,25 @@ async def demo_crawl():
                     logger.warning("登录认证失败，将以未登录状态继续")
             else:
                 logger.info("未找到 Cookie 文件，跳过登录认证")
+            """
+            logger.info("目标网站 books.toscrape.com 不需要登录，跳过认证步骤")
 
             # 创建爬虫实例
             page = await browser.new_page()
 
-            # 示例：使用内容爬虫爬取分页列表
-            # 实际使用时需要修改为目标网站的选择器
+            # 爬取 books.toscrape.com 书籍数据
+            # 网站特点：电商结构，50页数据，包含书名、价格、评分、库存信息
             crawler = ContentCrawler(
-                start_url="https://example.com/articles",
-                item_selector=".article-item",
+                start_url="http://books.toscrape.com/catalogue/page-1.html",
+                item_selector="article.product_pod",
                 fields={
-                    "title": ".article-title",
-                    "content": ".article-summary",
-                    "author": ".author-name",
-                    "time": ".publish-time",
-                    "link": ".article-title|href",
+                    "title": "h3 a|title",  # 书名（从title属性获取完整标题）
+                    "price": ".price_color",  # 价格
+                    "rating": ".star-rating|class",  # 评分（从class属性提取）
+                    "availability": ".availability",  # 库存状态
+                    "link": "h3 a|href",  # 详情页链接
                 },
-                next_page_selector=".pagination .next",
+                next_page_selector=".next a",  # 下一页按钮
                 max_pages=settings.crawl_max_pages,
                 delay_min=settings.crawl_delay_min,
                 delay_max=settings.crawl_delay_max
@@ -134,8 +139,9 @@ async def demo_crawl():
             await storage.save(results)
 
             # 生成分析报告
+            # 使用书名字段生成词云和统计分析
             report = ReportGenerator(results, settings.storage_output_dir)
-            report_path = report.generate(text_field='content')
+            report_path = report.generate(text_field='title')
             logger.info(f"分析报告已生成: {report_path}")
 
             logger.info("=" * 50)

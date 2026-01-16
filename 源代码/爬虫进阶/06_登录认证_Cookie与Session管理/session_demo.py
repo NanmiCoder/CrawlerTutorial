@@ -277,10 +277,118 @@ async def demo_expiry_monitoring():
     print(f"  即将过期: {summary['expiring_soon']}")
 
 
+async def demo_real_login():
+    """演示真实网站登录流程 - quotes.toscrape.com"""
+    print("\n" + "=" * 50)
+    print("6. 真实网站登录演示 (quotes.toscrape.com)")
+    print("=" * 50)
+
+    login_url = "https://quotes.toscrape.com/login"
+    home_url = "https://quotes.toscrape.com/"
+
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        # 1. 访问登录页面
+        print(f"\n1) 访问登录页面: {login_url}")
+        resp = await client.get(login_url)
+        print(f"   状态码: {resp.status_code}")
+
+        # 2. 提交登录表单（quotes.toscrape.com 接受任意用户名密码）
+        print("\n2) 提交登录表单...")
+        login_data = {
+            "username": "admin",
+            "password": "admin"
+        }
+        resp = await client.post(login_url, data=login_data)
+        print(f"   状态码: {resp.status_code}")
+
+        # 3. 检查登录状态
+        print("\n3) 检查登录状态...")
+        if "Logout" in resp.text:
+            print("   ✅ 登录成功！")
+
+            # 4. 获取并显示 Cookie
+            print("\n4) 获取到的 Cookie:")
+            cookies_dict = dict(client.cookies)
+            for name, value in cookies_dict.items():
+                print(f"   {name}: {value}")
+
+            # 5. 保存 Cookie 到文件
+            print("\n5) 保存 Cookie 到文件...")
+            Path("data").mkdir(exist_ok=True)
+            cookie_path = "data/quotes_cookies.json"
+
+            # 转换为标准格式
+            cookies_list = [
+                {
+                    "name": name,
+                    "value": value,
+                    "domain": "quotes.toscrape.com",
+                    "path": "/"
+                }
+                for name, value in cookies_dict.items()
+            ]
+
+            with open(cookie_path, "w") as f:
+                json.dump(cookies_list, f, indent=2)
+            print(f"   Cookie 已保存到: {cookie_path}")
+
+            # 6. 测试 Cookie 复用
+            print("\n6) 测试 Cookie 复用...")
+            async with httpx.AsyncClient() as new_client:
+                # 加载保存的 Cookie
+                with open(cookie_path, "r") as f:
+                    loaded_cookies = json.load(f)
+
+                # 转换为 httpx 格式并注入
+                cookies_dict = {c["name"]: c["value"] for c in loaded_cookies}
+                new_client.cookies.update(cookies_dict)
+
+                # 访问主页
+                resp = await new_client.get(home_url)
+                if "Logout" in resp.text:
+                    print("   ✅ Cookie 复用成功！保持登录状态")
+                else:
+                    print("   ❌ Cookie 复用失败")
+
+            # 7. 使用 CookieManager 管理
+            print("\n7) 使用 CookieManager 管理...")
+
+            async def check_quotes_login(cookies: dict) -> bool:
+                """检查 quotes.toscrape.com 登录状态"""
+                try:
+                    async with httpx.AsyncClient(cookies=cookies, timeout=10) as c:
+                        resp = await c.get(home_url)
+                        return "Logout" in resp.text
+                except Exception:
+                    return False
+
+            manager = CookieManager(
+                storage_path="data/quotes_managed_cookies.json",
+                login_checker=check_quotes_login
+            )
+
+            # 保存 Cookie
+            manager.update(cookies_list)
+            await manager.save()
+            print("   Cookie 已通过 CookieManager 保存")
+
+            # 验证并获取有效 Cookie
+            valid_cookies = await manager.get_valid_cookies()
+            if valid_cookies:
+                print(f"   ✅ CookieManager 验证通过，获取到 {len(valid_cookies)} 个有效 Cookie")
+            else:
+                print("   ❌ CookieManager 验证失败")
+
+        else:
+            print("   ❌ 登录失败")
+
+    print("\n真实登录演示完成")
+
+
 async def demo_complete_workflow():
     """演示完整的工作流程"""
     print("\n" + "=" * 50)
-    print("6. 完整工作流程演示")
+    print("7. 完整工作流程演示")
     print("=" * 50)
 
     # 模拟一个完整的登录和爬取流程
@@ -348,6 +456,7 @@ async def main():
     await demo_cookie_rotation()
     await demo_login_detection()
     await demo_expiry_monitoring()
+    await demo_real_login()  # 新增：真实登录演示
     await demo_complete_workflow()
 
     print("\n" + "=" * 50)

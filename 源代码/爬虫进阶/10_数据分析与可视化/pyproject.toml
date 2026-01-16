@@ -1,0 +1,24 @@
+[project]
+name = "chapter10-data-analysis"
+version = "0.1.0"
+description = "第10章：数据分析与可视化 - Pandas分析、词云生成、图表制作"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2.0",
+    "jieba>=0.42.0",
+    "wordcloud>=1.9.0",
+    "matplotlib>=3.8.0",
+]
+
+[project.optional-dependencies]
+interactive = [
+    "pyecharts>=2.0.0",  # 交互式图表
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

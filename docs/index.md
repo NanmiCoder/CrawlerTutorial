@@ -25,7 +25,9 @@
 ## 高级爬虫
 
 ## 爬虫交流群
-可以加作者wx拉进群: yzglan，备注来自github爬虫教程.
+扫码加作者企微拉进群，备注来自github爬虫教程
+
+<img src="./static/images/QIWEI.png" alt="企微二维码" width="200"/>
 
 
 ## 免责声明
